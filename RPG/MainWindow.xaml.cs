@@ -17,6 +17,7 @@ namespace RPG
     {
         string path = @"D:\Курсяк\RPG\RPG\bin\Debug\netcoreapp3.1\Hero.json";
         static Hero hero = new Hero("Test Hero");
+        TaskCompletionSource<bool> End = new TaskCompletionSource<bool>();
         Enemy enemy = new Enemy()
         {
             Name = "Skelet",
@@ -45,7 +46,6 @@ namespace RPG
 
         AttackSpell attackSpell = new AttackSpell()
         {
-
             Name = "test",
             Damage = 10,
             ManaCoast = 5
@@ -64,7 +64,7 @@ namespace RPG
             hero.Ability.Add(attackSpell);
             hero.Ability.Add(buffSpell);
             InitializeComponent();
-
+            EndBattle();
         }
 
         private void Start_Click(object sender, RoutedEventArgs e)
@@ -98,10 +98,10 @@ namespace RPG
             TxtEditor.Items.Add("Hero deals damage: " + hero.Damage());
             TxtEditor.Items.Add("Enemy Health: " + enemy.Health);
             TxtEditor.Items.Add("");
-            hero.Health -= enemy.Damage();
-            TxtEditor.Items.Add("Enemy deals damage: " + enemy.Damage());
-            TxtEditor.Items.Add("Health Hero: " + hero.Health);
-            TxtEditor.Items.Add("");
+            if (!CheckHP())
+            {
+                DamageEnemy();
+            }
         }
 
         private void Buff_Click(object sender, RoutedEventArgs e)
@@ -112,6 +112,10 @@ namespace RPG
             TxtEditor.Items.Add("Health Hero: " + hero.Health);
             TxtEditor.Items.Add("Mana Hero: " + hero.Mana);
             TxtEditor.Items.Add("");
+            if (!CheckHP())
+            {
+                DamageEnemy();
+            }
         }
 
         private void Debuff_Click(object sender, RoutedEventArgs e)
@@ -122,11 +126,10 @@ namespace RPG
             TxtEditor.Items.Add("Enemy Health: " + enemy.Health);
             TxtEditor.Items.Add("Mana Hero: " + hero.Mana);
             TxtEditor.Items.Add("");
-            hero.Health -= enemy.Damage();
-            TxtEditor.Items.Add("Enemy deals damage: " + enemy.Damage());
-            TxtEditor.Items.Add("Health Hero: " + hero.Health);
-            TxtEditor.Items.Add("");
-
+            if (!CheckHP()) 
+            {
+                DamageEnemy();
+            }   
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -153,8 +156,31 @@ namespace RPG
             else 
             {
                 TxtEditor.Items.Add("File not uploaded");
-            } 
-                 
+            }                 
+        }
+
+        private void DamageEnemy() 
+        {
+            hero.Health -= enemy.Damage();
+            TxtEditor.Items.Add("Enemy deals damage: " + enemy.Damage());
+            TxtEditor.Items.Add("Health Hero: " + hero.Health);
+            TxtEditor.Items.Add("");
+            CheckHP();
+        }
+        private bool CheckHP()
+        {
+            if (hero.Health <= 0 || enemy.Health <= 0)
+            {
+                End.SetResult(true);
+                return true;
+            }
+            return false;
+        }
+
+        private async void EndBattle()
+        {
+            await End.Task;
+            TxtEditor.Items.Add("Finish");
         }
     }
 }
