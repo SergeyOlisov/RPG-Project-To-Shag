@@ -23,7 +23,7 @@ namespace RPG
             Level = 1,
             Experience = 20,
             Health = 15,
-            Mana = 10
+            Mana = 15
         };
         IAbility temp2 = hero;
 
