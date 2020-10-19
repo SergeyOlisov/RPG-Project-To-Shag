@@ -8,8 +8,8 @@
     <Grid>
         <Button x:Name="Start" Content="Start" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="80" Margin="257,45,0,0" Click="Start_Click"/>
         <Button x:Name="Attack" Content="Attack" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="80"  Margin="257,105,0,0" Click="Attack_Click"/>
-        <Image Source="D:\Курсяк\RPG-Project-To-Shag\RPG\1.jpg" HorizontalAlignment="Left" Height="170" VerticalAlignment="Top" Width="122" Margin="37,60,0,0" />
-        <Image Source="D:\Курсяк\RPG-Project-To-Shag\RPG\2.jpg" HorizontalAlignment="Left" Height="170" VerticalAlignment="Top" Width="124" Margin="436,57,0,0" />
+        <Image Source="D:\Курсяк\RPG-Project-To-Shag\RPG\1.jpg" HorizontalAlignment="Left" Height="170" VerticalAlignment="Top" Width="109" Margin="37,60,0,0" />
+        <Image Source="D:\Курсяк\RPG-Project-To-Shag\RPG\2.jpg" HorizontalAlignment="Left" Height="170" VerticalAlignment="Top" Width="112" Margin="436,57,0,0" />
         <Button x:Name="Buff" Content="Buff Hero" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="80"  Margin="197,165,0,0" Click="Buff_Click"/>
         <Button x:Name="Debuff" Content="Debuff Enemy" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="80"  Margin="317,165,0,0" Click="Debuff_Click"/>
         <ListBox x:Name="TxtEditor" Margin="10,250,10,10"/>

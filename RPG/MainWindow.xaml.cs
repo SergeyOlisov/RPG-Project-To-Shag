@@ -150,8 +150,7 @@ namespace RPG
             if (openFileDialog.ShowDialog() == true)
             {
                 TxtEditor.Items.Add("File downloaded");
-                hero = Editor.HeroDeserialize(openFileDialog.FileName).Result;
-                //= File.ReadAllText(openFileDialog.FileName);
+                hero = Editor.HeroDeserialize(openFileDialog.FileName);
             }
             else 
             {

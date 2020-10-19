@@ -31,20 +31,20 @@ namespace RPG
             }
         }
 
-        public async static Task<Enemy> EnemyDeserialize(string path)
+        public  static Enemy EnemyDeserialize(string path)
         {
             using (FileStream fs = new FileStream(path, FileMode.Open))
             {
-                var enemy = await JsonSerializer.DeserializeAsync<Enemy>(fs);
+                var enemy = JsonSerializer.DeserializeAsync<Enemy>(fs).Result;
                 return enemy;
             }
         }
 
-        public async static Task<Hero>  HeroDeserialize(string path)
+        public static Hero  HeroDeserialize(string path)
         {
             using (FileStream fs = new FileStream(path, FileMode.Open))
             {
-                var hero = await JsonSerializer.DeserializeAsync<Hero>(fs);
+                var hero = JsonSerializer.DeserializeAsync<Hero>(fs).Result;
                 return hero;
             }
         }
