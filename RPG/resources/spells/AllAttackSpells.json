@@ -1,0 +1,18 @@
+[
+  
+  {
+    "Damage": 10,
+    "Name": "Fire Ball",
+    "ManaCoast": 5
+  },
+  {
+    "Damage": 8,
+    "Name": "Frost Ball",
+    "ManaCoast": 4
+  },
+  {
+    "Damage": 15,
+    "Name": "Lightning",
+    "ManaCoast": 8
+  }
+]

@@ -8,7 +8,7 @@ namespace RPG
     {
         public static string Skelet()
         {
-            return "Skelet.json";
+            return @"resources\enemies\Skelet.json";
         }
     }
 }

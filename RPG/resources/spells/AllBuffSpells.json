@@ -1,0 +1,17 @@
+[
+  {
+    "BuffValue": 10,
+    "Name": "Heal",
+    "ManaCoast": 5
+  },
+  {
+    "BuffValue": 8,
+    "Name": "Light Heal",
+    "ManaCoast": 4
+  },
+  {
+    "BuffValue": 15,
+    "Name": "Strong Heal",
+    "ManaCoast": 8
+  }
+]
