@@ -7,7 +7,24 @@
         mc:Ignorable="d"
         Title="Location1" Height="600" Width="800">
     <Grid>
-        <Image Source="" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="800" Margin="0,0,0,0"/>
-
+        <Image Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Location1.jpg" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="970" Margin="0,0,0,0"/>
+        <Image Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Enemy1.png" HorizontalAlignment="Left" Height="279" Margin="166,188,0,0" VerticalAlignment="Top" Width="196"/>
+        <Image Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Hero.png"  HorizontalAlignment="Left" Height="329" Margin="314,232,0,0" VerticalAlignment="Top" Width="276"/>
+        <ListBox Name="ShowStatistics" Margin="0,16,0,465"/>
+        <Button x:Name="Attack" Content="Attack" HorizontalAlignment="Left" Margin="434,522,0,0" VerticalAlignment="Top" Height="40" Width="110" Click="Attack_Click"/>
+        <Button x:Name="StaticHero" Content="Static Hero" HorizontalAlignment="Left" Margin="434,212,0,0" VerticalAlignment="Top" Width="102"/>
+        <Button x:Name="StaticEnemy" Content="Static Enemy" HorizontalAlignment="Left" Margin="213,173,0,0" VerticalAlignment="Top" Width="102"/>
+        <Menu Height="16" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <Button x:Name="Save" Content="Save" Click="Save_Click" />
+                <Button x:Name="Loading" Content="Loading" Click="Loading_Click" />
+                <Button x:Name="Exit" Content="Exit" Click="Exit_Click" />
+            </MenuItem>
+        </Menu>
+        <Button x:Name="Buff" Content="Ability" HorizontalAlignment="Left" Margin="566,522,0,0" VerticalAlignment="Top" Height="40" Width="110" Click="Buff_Click" />
+        <RadioButton GroupName="Ability" Content="FireBall" HorizontalAlignment="Left" Margin="580,438,0,0" VerticalAlignment="Top" Height="18" Width="96"  />
+        <RadioButton GroupName="Ability" Content="FrostBall" HorizontalAlignment="Left" Margin="580,461,0,0" VerticalAlignment="Top" Height="18" Width="96" />
+        <RadioButton GroupName="Ability" Content="Lightning" HorizontalAlignment="Left" Margin="580,484,0,0" VerticalAlignment="Top" Height="18" Width="96" />
+        <RadioButton GroupName="Ability" Content="Buff HP" HorizontalAlignment="Left" Margin="580,415,0,0" VerticalAlignment="Top" Height="18" Width="96" Checked="RadioButton_Checked" />
     </Grid>
 </Window>
