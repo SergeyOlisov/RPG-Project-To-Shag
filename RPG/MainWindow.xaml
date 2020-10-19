@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="600">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
         <Button x:Name="Start" Content="Start" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="80" Margin="257,45,0,0" Click="Start_Click"/>
         <Button x:Name="Attack" Content="Attack" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="80"  Margin="257,105,0,0" Click="Attack_Click"/>

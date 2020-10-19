@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RPG"
         mc:Ignorable="d"
-        Title="Location1" Height="450" Width="800">
+        Title="Location1" Height="600" Width="800">
     <Grid>
-        
+        <Image Source="" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="800" Margin="0,0,0,0"/>
+
     </Grid>
 </Window>
