@@ -16,14 +16,14 @@ namespace RPG
             return enemy;
         }
 
-        public static void EnemyEdit(Enemy enemy)
+        public static void EnemySerialize(Enemy enemy)
         {
             using (FileStream fs = new FileStream(enemy.Name + ".json", FileMode.OpenOrCreate))
             {
                 JsonSerializer.SerializeAsync<Enemy>(fs, enemy);
             }
         }
-        public static void HeroEdit(Hero hero, string path)
+        public static void HeroSerialize(Hero hero, string path)
         {
             using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
             {
@@ -46,6 +46,39 @@ namespace RPG
             {
                 var hero = JsonSerializer.DeserializeAsync<Hero>(fs).Result;
                 return hero;
+            }
+        }
+
+        public static void AttackSpellSerialize(AttackSpell ability)
+        {
+            using (FileStream fs = new FileStream(ability.Name + ".json", FileMode.OpenOrCreate))
+            {
+                JsonSerializer.SerializeAsync<AttackSpell>(fs, ability);
+            }
+        }
+
+        public static Ability AttackSpellDeserialize(string path)
+        {
+            using (FileStream fs = new FileStream(path, FileMode.Open))
+            {
+                var ability = JsonSerializer.DeserializeAsync<AttackSpell>(fs).Result;
+                return ability;
+            }
+        }
+
+        public static void AttackSpellsSerialize(List<AttackSpell> attackSpells)
+        {
+            using (FileStream fs = new FileStream("AllAttackSpells" + ".json", FileMode.OpenOrCreate))
+            {
+                JsonSerializer.SerializeAsync<List<AttackSpell>>(fs, attackSpells);
+            }
+        }
+
+        public static void BuffSpellsSerialize(List<Buff> buffSpells)
+        {
+            using (FileStream fs = new FileStream("AllAttackSpells" + ".json", FileMode.OpenOrCreate))
+            {
+                JsonSerializer.SerializeAsync<List<Buff>>(fs, buffSpells);
             }
         }
     }

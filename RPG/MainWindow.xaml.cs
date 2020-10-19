@@ -6,6 +6,9 @@ using System.Runtime.Serialization.Json;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Win32;
+using RPG.data.helpers;
+using System.Windows.Documents;
+using System.Collections.Generic;
 
 namespace RPG
 {
@@ -63,8 +66,22 @@ namespace RPG
         {
             hero.Ability.Add(attackSpell);
             hero.Ability.Add(buffSpell);
-            Editor.EnemyDeserialize(ObjectHelper.Skelet());
             InitializeComponent();
+            TxtEditor.Items.Add(hero.SkillPoints);
+            hero.SkillPoints += 3;
+            TxtEditor.Items.Add(hero.SkillPoints);
+            foreach (var attackSpell in AbilityHelper.GetAttackSpells())
+            {
+                hero.StudyAbility(attackSpell);
+            }
+            hero.SkillPoints += 3;
+            TxtEditor.Items.Add(hero.SkillPoints);
+            foreach (var buffSpell in AbilityHelper.GetBuffSpells())
+            {
+                hero.StudyAbility(buffSpell);
+            }
+            TxtEditor.Items.Add(hero.SkillPoints);
+            TxtEditor.Items.Add(hero.Ability.Count);
             EndBattle();
         }
 
@@ -142,7 +159,7 @@ namespace RPG
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
             if (saveFileDialog.ShowDialog() == true)
-                Editor.HeroEdit(hero, saveFileDialog.FileName);
+                Editor.HeroSerialize(hero, saveFileDialog.FileName);
         }
         private void Loading_Click(object sender, RoutedEventArgs e)
         {
