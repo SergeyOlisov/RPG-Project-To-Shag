@@ -4,7 +4,11 @@ using System.Text;
 
 namespace RPG
 {
-    class ObjectHelper
+    public static class ObjectHelper
     {
+        public static string Skelet()
+        {
+            return "Skelet.json";
+        }
     }
 }
