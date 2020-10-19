@@ -46,14 +46,14 @@ namespace RPG
 
         AttackSpell attackSpell = new AttackSpell()
         {
-            Name = "test",
+            Name = "Fire Ball",
             Damage = 10,
             ManaCoast = 5
         };
 
         Buff buffSpell = new Buff()
         {
-            Name = "test Buff",
+            Name = "Heal",
             BuffValue = 5,
             ManaCoast = 5
         };
@@ -63,6 +63,7 @@ namespace RPG
         {
             hero.Ability.Add(attackSpell);
             hero.Ability.Add(buffSpell);
+            Editor.EnemyDeserialize(ObjectHelper.Skelet());
             InitializeComponent();
             EndBattle();
         }
