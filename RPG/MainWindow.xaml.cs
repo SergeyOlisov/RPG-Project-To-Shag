@@ -181,5 +181,12 @@ namespace RPG
             await End.Task;
             TxtEditor.Items.Add("Finish");
         }
+
+        private void Temp_Click(object sender, RoutedEventArgs e)
+        {
+            var Location1 = new Location1();
+            Location1.Show();
+            Close();
+        }
     }
 }
