@@ -109,7 +109,7 @@ namespace RPG
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
             if (saveFileDialog.ShowDialog() == true)
-                Editor.HeroEdit(hero, saveFileDialog.FileName);
+                Editor.HeroSerialize(hero, saveFileDialog.FileName);
         }
         private void Loading_Click(object sender, RoutedEventArgs e)
         {
