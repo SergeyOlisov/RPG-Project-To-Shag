@@ -45,14 +45,14 @@ namespace RPG
         AttackSpell attackSpell = new AttackSpell()
         {
             Name = "test",
-            Damage = 10,
+            Value = 10,
             ManaCoast = 5
         };
 
         Buff buffSpell = new Buff()
         {
             Name = "test Buff",
-            BuffValue = 5,
+            Value = 5,
             ManaCoast = 5
         };
 

@@ -12,7 +12,7 @@ namespace RPG
 
         public Ability() { }
 
-        public Ability(string name, int value, int manaCoast)
+        public Ability(string name, int manaCoast)
         {
             Name = name;
             ManaCoast = manaCoast;
@@ -21,12 +21,12 @@ namespace RPG
 
     public class Buff : Ability
     {
-        public int BuffValue { set; get; }
+        public int Value { set; get; }
     }
 
     public class AttackSpell : Ability
     {
-        public int Damage { set; get; }
+        public int Value { set; get; }
     }
 }
 
