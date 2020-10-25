@@ -10,7 +10,7 @@ namespace RPG.data.helpers
     {
         public static List<AttackSpell> GetAttackSpells()
         {
-            using (FileStream fs = new FileStream("AllAttackSpells.json", FileMode.Open))
+            using (FileStream fs = new FileStream(@"D:\Курсяк\RPG-Project-To-Shag\RPG\resources\spells\AllAttackSpells.json", FileMode.Open))
             {
                 var ability = JsonSerializer.DeserializeAsync<List<AttackSpell>>(fs).Result;
                 return ability;
@@ -19,7 +19,7 @@ namespace RPG.data.helpers
 
         public static List<Buff> GetBuffSpells()
         {
-            using (FileStream fs = new FileStream("AllBuffSpells.json", FileMode.Open))
+            using (FileStream fs = new FileStream(@"D:\Курсяк\RPG-Project-To-Shag\RPG\resources\spells\AllBuffSpells.json", FileMode.Open))
             {
                 var ability = JsonSerializer.DeserializeAsync<List<Buff>>(fs).Result;
                 return ability;

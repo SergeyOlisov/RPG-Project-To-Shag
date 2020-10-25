@@ -11,7 +11,7 @@
         <Button x:Name="Start" Content="Start" HorizontalAlignment="Center" Margin="0,144,0,0" VerticalAlignment="Top" Click="Start_Click" Height="57" Width="164"/>
         <Button x:Name="Menu" Content="Menu" HorizontalAlignment="Center" Margin="0,236,0,0" VerticalAlignment="Top" Height="57" Width="164"/>
         <Button x:Name="Authors" Content="Authors" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" Height="57" Width="164"/>
-        <Button x:Name="Exit" Content="Authors" HorizontalAlignment="Center" Margin="0,425,0,0" VerticalAlignment="Top" Height="57" Width="164" Click="Exit_Click"/>
+        <Button x:Name="Exit" Content="Exit" HorizontalAlignment="Center" Margin="0,425,0,0" VerticalAlignment="Top" Height="57" Width="164" Click="Exit_Click"/>
 
     </Grid>
 </Window>
