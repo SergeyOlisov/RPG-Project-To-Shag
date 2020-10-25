@@ -6,9 +6,6 @@ using System.Runtime.Serialization.Json;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Win32;
-using System.Windows.Controls;
-using System.Collections.Generic;
-using RPG.data.helpers;
 
 namespace RPG
 {
@@ -17,8 +14,6 @@ namespace RPG
     /// </summary>
     public partial class Location1 : Window
     {
-        RadioButton ChoiceAbility;
-        List<AttackSpell> attackSpells = new List<AttackSpell>();
         static Hero hero = new Hero("Test Hero");
         TaskCompletionSource<bool> End = new TaskCompletionSource<bool>();
         Enemy enemy = new Enemy()
@@ -29,8 +24,7 @@ namespace RPG
             Health = 15,
             Mana = 15
         };
-        IAbility TempEnemy = new Enemy();
-        IAbility TempHero = hero;
+        IAbility temp2 = hero;
 
         void ShowStaticHero()
         {
@@ -48,12 +42,29 @@ namespace RPG
             ShowStatistics.Items.Add("");
         }
 
+        AttackSpell attackSpell = new AttackSpell()
+        {
+            Name = "test",
+            Value = 10,
+            ManaCoast = 5
+        };
+
+        Buff buffSpell = new Buff()
+        {
+            Name = "test Buff",
+            Value = 5,
+            ManaCoast = 5
+        };
+
+
         public Location1()
         {
-            //attackSpells = AbilityHelper.GetAttackSpells();
+            hero.Ability.Add(attackSpell);
+            hero.Ability.Add(buffSpell);
             InitializeComponent();
             EndBattle();
         }
+
         private void Attack_Click(object sender, RoutedEventArgs e)
         {
             ShowStatistics.Items.Add("");
@@ -66,6 +77,7 @@ namespace RPG
                 DamageEnemy();
             }
         }
+
         private void DamageEnemy()
         {
             hero.Health -= enemy.Damage();
@@ -82,6 +94,11 @@ namespace RPG
                 return true;
             }
             return false;
+        }
+        private async void EndBattle()
+        {
+            await End.Task;
+            ShowStatistics.Items.Add("Finish");
         }
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
@@ -108,30 +125,15 @@ namespace RPG
                 ShowStatistics.Items.Add("File not uploaded");
             }
         }
-        private async void EndBattle()
+
+        private void Buff_Click(object sender, RoutedEventArgs e)
         {
-            await End.Task;
-            ShowStatistics.Items.Add("Finish");
-        }
-        private void Ability_Click(object sender, RoutedEventArgs e)
-        {
-            ShowStatistics.Items.Add("You clicked " + ChoiceAbility.Content.ToString() + ".");
-            attackSpells = Editor.AttackSpellDeserialize(@"D:\Курсяк\RPG-Project-To-Shag\RPG\resources\spells\AllAttackSpells.json");
-            //ShowStatistics.Items.Add(attackSpells.Da);
-            //ShowStatistics.Items.Add("You clicked " + li.Content.ToString() + ".") ;
-            //enemy.Health -= attackSpells;
-            //ShowStatistics.Items.Add(enemy.Health);
-            //ShowStatistics.Items.Add("имя"+attackSpells.Name);
-            //ShowStatistics.Items.Add("исп маны"+attackSpells.ManaCoast);
-            //ShowStatistics.Items.Add("Урон"+attackSpells.Damage);
+
         }
 
-        private void RadioButton_Checked_Lightning(object sender, RoutedEventArgs e)
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            ChoiceAbility = (RadioButton)sender;
-            
+            var ability = (Ability)sender;
         }
     }
 }
-
-//hero.Health += temp2.Buff(hero.Ability.Find(s => s == buffSpell));

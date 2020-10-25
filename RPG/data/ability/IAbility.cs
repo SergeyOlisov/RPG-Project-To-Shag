@@ -18,7 +18,7 @@ namespace RPG
                     if (ability is AttackSpell spell)
                     {
                         Mana -= spell.ManaCoast;
-                        return spell.Damage;
+                        return spell.Value;
                     }
                 }
 
@@ -33,7 +33,7 @@ namespace RPG
                 if (ability is Buff spell)
                 {
                     Mana -= spell.ManaCoast;
-                    return spell.BuffValue;
+                    return spell.Value;
                 }
             }
             return 0;
