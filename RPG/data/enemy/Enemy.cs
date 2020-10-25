@@ -23,7 +23,7 @@ namespace RPG
         {
             Name = name;
             Level = hero.Level;
-            Experience = Level * 10000;
+            Experience = Level * 100;
             Health = Level * 150;
             Mana = Level * 10;
         }
