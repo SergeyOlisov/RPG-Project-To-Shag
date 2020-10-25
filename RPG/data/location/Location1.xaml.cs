@@ -6,6 +6,7 @@ using System.Runtime.Serialization.Json;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Win32;
+using RPG.data.helpers;
 
 namespace RPG
 {
@@ -15,6 +16,7 @@ namespace RPG
     public partial class Location1 : Window
     {
         static Hero hero = new Hero("Test Hero");
+        IAbility AttacSpell = hero;
         TaskCompletionSource<bool> End = new TaskCompletionSource<bool>();
         Enemy enemy = new Enemy()
         {
@@ -126,14 +128,16 @@ namespace RPG
             }
         }
 
-        private void Buff_Click(object sender, RoutedEventArgs e)
+
+        private void Ability_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        private void StaticHero_Click(object sender, RoutedEventArgs e)
         {
-            var ability = (Ability)sender;
+            var WindowStaticHero = new WindowStaticHero();
+            WindowStaticHero.Show();
         }
     }
 }
