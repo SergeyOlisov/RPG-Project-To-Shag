@@ -102,7 +102,7 @@ namespace RPG
 
         public void StudyAbility(Ability ability)
         {
-            if (SkillPoints > 0)
+            if (SkillPoints > 0 && ability.Level <= Level)
             {
                 var abilityCheck = Ability.Find(abil => abil.Name == ability.Name);
                 if (abilityCheck != null)

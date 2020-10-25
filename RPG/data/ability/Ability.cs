@@ -9,6 +9,7 @@ namespace RPG
 
         public string Name { set; get; }
         public int ManaCoast { set; get; } //расход маны на абилку
+        public int Level { set; get; } //требуемый уровень
 
         public Ability() { }
 
