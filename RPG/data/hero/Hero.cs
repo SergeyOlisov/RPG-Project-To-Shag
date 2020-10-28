@@ -29,7 +29,7 @@ namespace RPG
         public Hero()
         {
             Name = "Wanderer";
-            Level = 1;
+            Level = 2; //нужен 1 лвл, 2 для теста
             Experience = 0;
             Strength = 15;
             Agility = 15;

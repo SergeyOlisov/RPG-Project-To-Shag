@@ -14,10 +14,15 @@ using RPG;
 
 namespace RPG.data.hero
 {
-    public abstract class Player
+    public static class Player
     {
-        static Hero hero = new Hero();
-        public Hero LoadingPlayer()
+        public static Hero hero;
+
+        public static void CreatePlayer()
+        {
+            hero = Editor.HeroCreate();
+        }
+        public static void LoadingPlayer()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
@@ -26,14 +31,13 @@ namespace RPG.data.hero
                 hero = Editor.HeroDeserialize(openFileDialog.FileName);
                 if(hero == null)
                 {
-                    return Editor.HeroCreate();
+                    hero = Editor.HeroCreate();
                 }
-                return hero;
             }
-            return hero;
+            hero = Editor.HeroCreate();
         }
 
-        public void HeroSave()
+        public static void HeroSave()
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
