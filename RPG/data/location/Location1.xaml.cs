@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Win32;
 using RPG.data.helpers;
+using System.ComponentModel;
 
 namespace RPG
 {
@@ -15,6 +16,8 @@ namespace RPG
     /// </summary>
     public partial class Location1 : Window
     {
+        int mana = 10;
+        int tempManaHero = hero.Mana;
         static Hero hero = new Hero("Test Hero");
         IAbility AttacSpell = hero;
         TaskCompletionSource<bool> End = new TaskCompletionSource<bool>();
@@ -59,10 +62,10 @@ namespace RPG
         };
 
 
+
         public Location1()
         {
-            hero.Ability.Add(attackSpell);
-            hero.Ability.Add(buffSpell);
+
             InitializeComponent();
             EndBattle();
         }
@@ -131,13 +134,18 @@ namespace RPG
 
         private void Ability_Click(object sender, RoutedEventArgs e)
         {
-
+            hero.Mana -= 10;
+            ShowStatistics.Items.Add("Mana " + hero.Mana);
         }
 
         private void StaticHero_Click(object sender, RoutedEventArgs e)
         {
             var WindowStaticHero = new WindowStaticHero();
             WindowStaticHero.Show();
+        }
+
+        private void Mana_Hero_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
         }
     }
 }

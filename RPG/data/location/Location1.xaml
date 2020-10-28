@@ -12,8 +12,8 @@
         <Image Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Hero.png"  HorizontalAlignment="Left" Height="329" Margin="314,232,0,0" VerticalAlignment="Top" Width="276"/>
         <ListBox Name="ShowStatistics" Margin="0,16,0,465"/>
         <Button x:Name="Attack" Content="Attack" HorizontalAlignment="Left" Margin="413,514,0,0" VerticalAlignment="Top" Height="40" Width="110" Click="Attack_Click"/>
-        <Button x:Name="StaticHero" Content="Static Hero" HorizontalAlignment="Left" Margin="434,212,0,0" VerticalAlignment="Top" Width="102" Click="StaticHero_Click"/>
-        <Button x:Name="StaticEnemy" Content="Static Enemy" HorizontalAlignment="Left" Margin="213,173,0,0" VerticalAlignment="Top" Width="102"/>
+        <Button x:Name="StaticHero" Content="Static Hero" HorizontalAlignment="Left" Margin="433,166,0,0" VerticalAlignment="Top" Width="102" Click="StaticHero_Click"/>
+        <Button x:Name="StaticEnemy" Content="Static Enemy" HorizontalAlignment="Left" Margin="207,442,0,0" VerticalAlignment="Top" Width="102"/>
         <Menu Height="16" VerticalAlignment="Top">
             <MenuItem Header="File">
                 <Button x:Name="Save" Content="Save" Click="Save_Click" />
@@ -22,5 +22,9 @@
             </MenuItem>
         </Menu>
         <Button x:Name="Ability" Content="Ability coast" HorizontalAlignment="Left" Margin="546,514,0,0" VerticalAlignment="Top" Height="40" Width="110" Click="Ability_Click" />
+        <ProgressBar x:Name="Mana_Hero" HorizontalAlignment="Left" Height="10" Margin="434,222,0,0" VerticalAlignment="Top" Width="100" Foreground="Blue" Maximum="100" Minimum="0" Value="{Binding mana}" ValueChanged="Mana_Hero_ValueChanged"/>
+        <ProgressBar x:Name="HP_Hero" HorizontalAlignment="Left" Height="10" Margin="434,200,0,0" VerticalAlignment="Top" Width="100" Maximum="100" Minimum="0" Value="100"/>
+        <ProgressBar x:Name="Mana_Enemy" HorizontalAlignment="Left" Height="10" Margin="214,188,0,0" VerticalAlignment="Top" Width="100" Maximum="100" Minimum="0" Value="100" Foreground="Blue"/>
+        <ProgressBar x:Name="HP_Enemy" HorizontalAlignment="Left" Height="10" Margin="213,166,0,0" VerticalAlignment="Top" Width="100" Maximum="100" Minimum="0" Value="100"/>
     </Grid>
 </Window>
