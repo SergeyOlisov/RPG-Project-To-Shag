@@ -7,13 +7,19 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    class Editor
+    abstract class Editor
     {
 
         public static Enemy EnemyCreate(string name, int level, int health, int mana, List<Ability> abilities)
         {
             var enemy = new Enemy(name, level, health, mana, abilities);
             return enemy;
+        }
+
+        public static Hero HeroCreate()
+        {
+            var hero = new Hero();
+            return hero;
         }
 
         public static void EnemySerialize(Enemy enemy)

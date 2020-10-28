@@ -26,7 +26,17 @@ namespace RPG
         //public List<Ability> Ability;
         public List<Ability> Ability { set; get; } = new List<Ability>();
 
-        public Hero(){}
+        public Hero()
+        {
+            Name = "Wanderer";
+            Level = 1;
+            Experience = 0;
+            Strength = 15;
+            Agility = 15;
+            Intellect = 15;
+            Vitality = 15;
+            UpdateHero();
+        }
         public Hero(string name)
         {
             Name = name;
