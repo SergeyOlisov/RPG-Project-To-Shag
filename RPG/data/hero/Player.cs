@@ -16,25 +16,26 @@ namespace RPG.data.hero
 {
     public static class Player
     {
-        public static Hero hero;
+        private static Hero hero;
+        private const string tempHeroPath = "tempHero.json";
 
-        public static void CreatePlayer()
+        public static Hero CreatePlayer()
         {
-            hero = Editor.HeroCreate();
+            return hero = Editor.HeroCreate();
         }
-        public static void LoadingPlayer()
+        public static Hero LoadingPlayer()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
-                hero = Editor.HeroDeserialize(openFileDialog.FileName);
+                hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
                 if(hero == null)
                 {
-                    hero = Editor.HeroCreate();
+                    return hero = Editor.HeroCreate();
                 }
             }
-            hero = Editor.HeroCreate();
+            return hero = Editor.HeroCreate();
         }
 
         public static void HeroSave()
@@ -43,6 +44,17 @@ namespace RPG.data.hero
             saveFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
             if (saveFileDialog.ShowDialog() == true)
                 Editor.HeroSerialize(hero, saveFileDialog.FileName);
+        }
+
+        public static Hero GetHero()
+        {
+            hero = Editor.HeroDeserialize(tempHeroPath);
+            return hero;
+        }
+
+        public static void TempHeroSave(Hero playerHero)
+        {
+            Editor.HeroSerialize(playerHero, tempHeroPath);
         }
     }
 }

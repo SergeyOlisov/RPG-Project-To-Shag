@@ -6,8 +6,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
     <Grid>
-        <Image Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Menu.jpg" HorizontalAlignment="Left" Height="753" VerticalAlignment="Top" Width="1046"/>
-
+        <Image Source="/Menu.jpg" HorizontalAlignment="Left" Height="753" VerticalAlignment="Top" Width="1046"/>
         <Button x:Name="Start" Content="Start" HorizontalAlignment="Center" Margin="0,144,0,0" VerticalAlignment="Top" Click="Start_Click" Height="57" Width="164"/>
         <Button x:Name="Menu" Content="Menu" HorizontalAlignment="Center" Margin="0,236,0,0" VerticalAlignment="Top" Height="57" Width="164"/>
         <Button x:Name="Authors" Content="Authors" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" Height="57" Width="164"/>

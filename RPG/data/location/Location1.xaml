@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="Location1" Height="600" Width="800">
     <Grid>
-        <Image Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Location1.jpg" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="970" Margin="0,0,0,0"/>
-        <Image Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Enemy1.png" HorizontalAlignment="Left" Height="279" Margin="166,188,0,0" VerticalAlignment="Top" Width="196"/>
-        <Image Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Hero.png"  HorizontalAlignment="Left" Height="329" Margin="314,232,0,0" VerticalAlignment="Top" Width="276"/>
+        <Image Source="/data/location/Location1.jpg" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="970" Margin="0,0,0,0"/>
+        <Image Source="/data/location/Enemy1.png" HorizontalAlignment="Left" Height="279" Margin="166,188,0,0" VerticalAlignment="Top" Width="196"/>
+        <Image Source="/data/location/Hero.png"  HorizontalAlignment="Left" Height="329" Margin="314,232,0,0" VerticalAlignment="Top" Width="276"/>
         <ListBox Name="ShowStatistics" Margin="0,16,0,465"/>
         <Button x:Name="Attack" Content="Attack" HorizontalAlignment="Left" Margin="413,514,0,0" VerticalAlignment="Top" Height="40" Width="110" Click="Attack_Click"/>
         <Button x:Name="StaticHero" Content="Static Hero" HorizontalAlignment="Left" Margin="433,166,0,0" VerticalAlignment="Top" Width="102" Click="StaticHero_Click"/>

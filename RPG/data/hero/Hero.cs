@@ -26,7 +26,7 @@ namespace RPG
         //public List<Ability> Ability;
         public List<Ability> Ability { set; get; } = new List<Ability>();
 
-        public Hero()
+        public Hero() 
         {
             Name = "Wanderer";
             Level = 2; //нужен 1 лвл, 2 для теста
@@ -35,6 +35,8 @@ namespace RPG
             Agility = 15;
             Intellect = 15;
             Vitality = 15;
+            StatPoints = 5; // для теста
+            SkillPoints = 1; // для теста
             UpdateHero();
         }
         public Hero(string name)
@@ -129,13 +131,8 @@ namespace RPG
         {
             Health = Vitality * 5;
             Mana = Intellect * 5;
-            ExperienceToNextLevel = Level * 50 * 2;
+            ExperienceToNextLevel = Level * 100;
             // TO-DO подумать над остальным
         }
-        /*
-        public int AttackSpell(Ability ability)
-        {
-            return AttackAbility(Ability.Find(s => s == ability));
-        }*/
     }
 }

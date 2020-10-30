@@ -63,12 +63,7 @@ namespace RPG
             Level++;
             Health = Health * 2;
             Mana = Mana * 2;
-            Experience = Level * 50 * 2;
-
-            /*public int AttackSpell(Ability ability)
-            {
-                return AttackAbility(Ability.Find(s => s == ability));
-            }*/
+            Experience = Level * 5;
         }
 
     }

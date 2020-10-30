@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.Win32;
 using RPG.data.helpers;
 using System.ComponentModel;
+using RPG.data.hero;
 
 namespace RPG
 {
@@ -18,7 +19,7 @@ namespace RPG
     {
         int mana = 10;
         int tempManaHero = hero.Mana;
-        static Hero hero = new Hero("Test Hero");
+        static Hero hero = new Hero();
         IAbility AttacSpell = hero;
         TaskCompletionSource<bool> End = new TaskCompletionSource<bool>();
         Enemy enemy = new Enemy()
@@ -65,7 +66,6 @@ namespace RPG
 
         public Location1()
         {
-
             InitializeComponent();
             EndBattle();
         }
@@ -97,6 +97,8 @@ namespace RPG
             {
                 End.SetResult(true);
                 return true;
+                //дополнить 
+                //закрытие окна или невозможность нажать на атаку
             }
             return false;
         }
@@ -104,6 +106,7 @@ namespace RPG
         {
             await End.Task;
             ShowStatistics.Items.Add("Finish");
+
         }
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
@@ -123,7 +126,7 @@ namespace RPG
             if (openFileDialog.ShowDialog() == true)
             {
                 ShowStatistics.Items.Add("File downloaded");
-                hero = Editor.HeroDeserialize(openFileDialog.FileName);
+                hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
             }
             else
             {
@@ -140,6 +143,7 @@ namespace RPG
 
         private void StaticHero_Click(object sender, RoutedEventArgs e)
         {
+            Player.TempHeroSave(hero);
             var WindowStaticHero = new WindowStaticHero();
             WindowStaticHero.Show();
         }

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="WindowStaticHero" Height="450" Width="300">
     <Window.Background>
-        <ImageBrush ImageSource="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\WindowStaticHero1.png"/>
+        <ImageBrush ImageSource="/WindowStaticHero.png"/>
     </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -44,8 +44,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="Button_Strenght_Down" Grid.Column="0" Content="-"/>
-            <Button x:Name="Button_Strenght_Up" Grid.Column="2" Content="+"/>
+            <Button x:Name="Button_Strenght_Down" Grid.Column="0" Content="-" Click="Button_Strenght_Down_Click"/>
+            <Button x:Name="Button_Strenght_Up" Grid.Column="2" Content="+" Click="Button_Strenght_Up_Click"/>
             <TextBlock x:Name="TextBloc_Hero_Strenght" Grid.Column="1" Text="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="4">
@@ -54,8 +54,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="Button_Agility_Down" Grid.Column="0" Content="-"/>
-            <Button x:Name="Button_Agility_Up" Grid.Column="2" Content="+"/>
+            <Button x:Name="Button_Agility_Down" Grid.Column="0" Content="-" Click="Button_Agility_Down_Click"/>
+            <Button x:Name="Button_Agility_Up" Grid.Column="2" Content="+" Click="Button_Agility_Up_Click"/>
             <TextBlock x:Name="TextBloc_Hero_Agility" Grid.Column="1" Text="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="5">
@@ -64,8 +64,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="Button_Intelect_Down" Grid.Column="0" Content="-"/>
-            <Button x:Name="Button_Intelect_Up" Grid.Column="2" Content="+"/>
+            <Button x:Name="Button_Intelect_Down" Grid.Column="0" Content="-" Click="Button_Intelect_Down_Click"/>
+            <Button x:Name="Button_Intelect_Up" Grid.Column="2" Content="+" Click="Button_Intelect_Up_Click"/>
             <TextBlock x:Name="TextBloc_Hero_Intelect" Grid.Column="1" Text="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="6">
@@ -74,8 +74,8 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="Button_Vitality_Down" Grid.Column="0" Content="-"/>
-            <Button x:Name="Button_Vitality_Up" Grid.Column="2" Content="+"/>
+            <Button x:Name="Button_Vitality_Down" Grid.Column="0" Content="-" Click="Button_Vitality_Down_Click"/>
+            <Button x:Name="Button_Vitality_Up" Grid.Column="2" Content="+" Click="Button_Vitality_Up_Click"/>
             <TextBlock x:Name="TextBloc_Hero_Vitality" Grid.Column="1" Text="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </Grid>
         <Grid Grid.Column="0" Grid.Row="8">
@@ -84,7 +84,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="Button_OK" Grid.Column="1" Content="OK" />
+            <Button x:Name="Button_OK" Grid.Column="1" Content="OK" Click="Button_OK_Click" />
         </Grid>
         <Grid Grid.Column="1" Grid.Row="8">
             <Grid.ColumnDefinitions>

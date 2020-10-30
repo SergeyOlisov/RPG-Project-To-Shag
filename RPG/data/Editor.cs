@@ -46,11 +46,21 @@ namespace RPG
             }
         }
 
-        public static Hero  HeroDeserialize(string path)
+        public static Hero  HeroDeserializeAsync(string path)
         {
             using (FileStream fs = new FileStream(path, FileMode.Open))
             {
                 var hero = JsonSerializer.DeserializeAsync<Hero>(fs).Result;
+                return hero;
+            }
+        }
+
+        public static Hero HeroDeserialize(string path)
+        {
+            using (StreamReader sr = new StreamReader(path))
+            {
+                string json = sr.ReadToEnd();
+                var hero = JsonSerializer.Deserialize<Hero>(json);
                 return hero;
             }
         }
