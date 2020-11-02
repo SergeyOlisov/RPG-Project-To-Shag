@@ -10,7 +10,7 @@
     <None Remove="data\location\Enemy1.png" />
     <None Remove="data\location\Hero.png" />
     <None Remove="data\location\Location1.jpg" />
-    <None Remove="Menu.jpg" />
+    <None Remove="Menu.jpg"/>
     <None Remove="WindowStaticHero.png" />
   </ItemGroup>
 
@@ -18,7 +18,7 @@
     <Resource Include="data\location\Enemy1.png" />
     <Resource Include="data\location\Hero.png" />
     <Resource Include="data\location\Location1.jpg" />
-    <Resource Include="Menu.jpg" />
+    <Resource Include="Menu.jpg"/>
     <Resource Include="WindowStaticHero.png" />
   </ItemGroup>
 

@@ -4,13 +4,145 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" Height="600" Width="800" SizeToContent="Manual" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="/Menu.jpg"/>
+    </Window.Background>
     <Grid>
-        <Image Source="/Menu.jpg" HorizontalAlignment="Left" Height="753" VerticalAlignment="Top" Width="1046"/>
-        <Button x:Name="Start" Content="Start" HorizontalAlignment="Center" Margin="0,144,0,0" VerticalAlignment="Top" Click="Start_Click" Height="57" Width="164"/>
-        <Button x:Name="Menu" Content="Menu" HorizontalAlignment="Center" Margin="0,236,0,0" VerticalAlignment="Top" Height="57" Width="164"/>
-        <Button x:Name="Authors" Content="Authors" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" Height="57" Width="164"/>
-        <Button x:Name="Exit" Content="Exit" HorizontalAlignment="Center" Margin="0,425,0,0" VerticalAlignment="Top" Height="57" Width="164" Click="Exit_Click"/>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="ToolBar" Grid.Row="0" Grid.Column="2">
+            <Polygon Fill="Black" Opacity="0.6"
+                 Points="0,0 0,30 270,30 270,0" MouseDown="Polygon_MouseDown"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Image x:Name="RollUp" Height="20" Width="30" Margin="10,0"  MouseDown="RollUp_MouseDown" Source="/roll up.png" >
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\roll up.png"/>
+                            <Setter Property="Opacity" Value="0.5"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <Image.Effect>
+                        <BlurEffect Radius="2"/>
+                    </Image.Effect>
+                </Image>
+                <Image x:Name="Exit_x" Height="30" Width="30" Margin="10,0" Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Exit_x.png" MouseDown="Exit_x_MouseDown">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Exit_x.png"/>
+                            <Setter Property="Opacity" Value="0.5"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <Image.Effect>
+                        <BlurEffect Radius="2"/>
+                    </Image.Effect>
+                </Image>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1" MouseDown="Grid_MouseDown">
+            <Polygon Fill="Black" Opacity="0.6"
+                 Points="0,0, 0,30, 270,30, 270,0"/>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Polygon Fill="Black" Opacity="0.6"
+                 Points="0,0, 0,30, 270,30, 270,0" MouseDown="Polygon_MouseDown_1"/>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Image x:Name="NewGames" Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\New games.png" MouseDown="NewGames_MouseDown">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\New games.png"/>
+                        <Setter Property="Opacity" Value="0.6"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="1" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+                <Image.Effect>
+                    <BlurEffect Radius="2"/>
+                </Image.Effect>
+            </Image>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="4">
+            <Image x:Name="Load" Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\load.png" MouseDown="Load_MouseDown">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\load.png"/>
+                        <Setter Property="Opacity" Value="0.6"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="1" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+                <Image.Effect>
+                    <BlurEffect Radius="2"/>
+                </Image.Effect>
+            </Image>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="6">
+            <Image x:Name="Setting" Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Setting.png" MouseDown="Setting_MouseDown">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Setting.png"/>
+                        <Setter Property="Opacity" Value="0.6"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="1" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+                <Image.Effect>
+                    <BlurEffect Radius="2"/>
+                </Image.Effect>
+            </Image>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="8">
+            <Image x:Name="Authors" Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Authors.png" MouseDown="Authors_MouseDown">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Authors.png"/>
+                        <Setter Property="Opacity" Value="0.6"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="1" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+                <Image.Effect>
+                    <BlurEffect Radius="2"/>
+                </Image.Effect>
+            </Image>
+        </Grid>
     </Grid>
 </Window>
