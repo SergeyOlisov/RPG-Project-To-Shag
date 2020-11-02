@@ -9,16 +9,16 @@ namespace RPG.data.location
     public abstract class Battle
     {
         static Hero hero = Player.GetHero();
-        IAbility spell = hero;
+        static IAbility spell = hero;
         TaskCompletionSource<bool> End = new TaskCompletionSource<bool>();
 
-        public void Attack(ref Enemy enemy)
+        public static void Attack(ref Enemy enemy)
         {
             enemy.Health -= hero.Damage();
             IsEnemyDead(ref enemy);
         }
 
-        public void SpellCaste(ref Enemy enemy, Ability ability) 
+        public static void SpellCaste(ref Enemy enemy, Ability ability) 
         {
             if (ability is AttackSpell attack)
             {
@@ -35,7 +35,7 @@ namespace RPG.data.location
             }
         }
 
-        public void IsEnemyDead(ref Enemy enemy) 
+        public static void IsEnemyDead(ref Enemy enemy) 
         {
             if (enemy.Health <= 0)
             {
@@ -43,7 +43,7 @@ namespace RPG.data.location
             }
         }
 
-        public void EndBattle() 
+        public static void EndBattle() 
         {
             Player.TempHeroSave(hero);
         }

@@ -12,8 +12,8 @@ namespace RPG
         public int Experience { set; get; }
         public int ExperienceToNextLevel { set; get; }
 
-        public int SkillPoints;
-        public int StatPoints;
+        public int SkillPoints { set; get; }
+        public int StatPoints { set; get; }
 
         public int Health { set; get; }
         public int MaxHealth { set; get; }

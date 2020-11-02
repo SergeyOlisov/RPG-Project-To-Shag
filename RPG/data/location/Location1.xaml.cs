@@ -17,11 +17,12 @@ namespace RPG
     /// </summary>
     public partial class Location1 : Window
     {
-        int mana = 10;
-        int tempManaHero = hero.Mana;
+
         static Hero hero = new Hero();
         IAbility AttacSpell = hero;
         TaskCompletionSource<bool> End = new TaskCompletionSource<bool>();
+        int mana = 10;
+        int tempManaHero = hero.Mana;
         Enemy enemy = new Enemy()
         {
             Name = "Skelet",
@@ -110,8 +111,8 @@ namespace RPG
         {
             await End.Task;
             ShowStatistics.Items.Add("Finish");
-
         }
+
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -145,12 +146,18 @@ namespace RPG
             ShowStatistics.Items.Add("Mana " + hero.Mana);
         }
 
-        private void StaticHero_Click(object sender, RoutedEventArgs e)
+        private  async void StaticHero_Click(object sender, RoutedEventArgs e)
         {
             Player.TempHeroSave(hero);
             var WindowStaticHero = new WindowStaticHero();
             WindowStaticHero.Show();
+            TaskCompletionSource<bool> Apply = new TaskCompletionSource<bool>();
+            await Apply.Task;
+            Apply.SetResult(WindowStaticHero.apply);
+            hero = Player.GetHero();
         }
+
+
 
         private void Mana_Hero_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
