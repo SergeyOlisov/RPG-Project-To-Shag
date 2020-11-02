@@ -16,7 +16,9 @@ namespace RPG
         public int StatPoints;
 
         public int Health { set; get; }
+        public int MaxHealth { set; get; }
         public int Mana { set; get; }
+        public int MaxMana { set; get; }
         
         public int Strength { set; get; }
         public int Agility { set; get; }
@@ -129,8 +131,8 @@ namespace RPG
 
         public void UpdateHero()
         {
-            Health = Vitality * 5;
-            Mana = Intellect * 5;
+            MaxHealth = Vitality * 5;
+            MaxMana = Intellect * 5;
             ExperienceToNextLevel = Level * 100;
             // TO-DO подумать над остальным
         }
