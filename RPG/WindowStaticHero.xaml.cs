@@ -47,9 +47,9 @@ namespace RPG
             TextBloc_Hero_Experience.Text = (hero.ExperienceToNextLevel - hero.Experience).ToString();
         }
 
-        private void Button_Strenght_Down_Click(object sender, RoutedEventArgs e)
+        private void Button_Strenght_Down_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if(strenght > hero.Strength)
+            if (strenght > hero.Strength)
             {
                 strenght--;
                 statPoints++;
@@ -58,9 +58,9 @@ namespace RPG
             TextBloc_Hero_Stat_Points.Text = statPoints.ToString();
         }
 
-        private void Button_Strenght_Up_Click(object sender, RoutedEventArgs e)
+        private void Button_Strenght_Up_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if(statPoints > 0)
+            if (statPoints > 0)
             {
                 strenght++;
                 statPoints--;
@@ -69,7 +69,7 @@ namespace RPG
             TextBloc_Hero_Stat_Points.Text = statPoints.ToString();
         }
 
-        private void Button_Agility_Down_Click(object sender, RoutedEventArgs e)
+        private void Button_Agility_Down_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (agility > hero.Agility)
             {
@@ -80,7 +80,7 @@ namespace RPG
             TextBloc_Hero_Stat_Points.Text = statPoints.ToString();
         }
 
-        private void Button_Agility_Up_Click(object sender, RoutedEventArgs e)
+        private void Button_Agility_Up_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (statPoints > 0)
             {
@@ -91,7 +91,7 @@ namespace RPG
             TextBloc_Hero_Stat_Points.Text = statPoints.ToString();
         }
 
-        private void Button_Intelect_Down_Click(object sender, RoutedEventArgs e)
+        private void Button_Intelect_Down_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (intellect > hero.Intellect)
             {
@@ -102,7 +102,7 @@ namespace RPG
             TextBloc_Hero_Stat_Points.Text = statPoints.ToString();
         }
 
-        private void Button_Intelect_Up_Click(object sender, RoutedEventArgs e)
+        private void Button_Intelect_Up_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (statPoints > 0)
             {
@@ -113,7 +113,7 @@ namespace RPG
             TextBloc_Hero_Stat_Points.Text = statPoints.ToString();
         }
 
-        private void Button_Vitality_Down_Click(object sender, RoutedEventArgs e)
+        private void Button_Vitality_Down_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (vitality > hero.Vitality)
             {
@@ -124,7 +124,7 @@ namespace RPG
             TextBloc_Hero_Stat_Points.Text = statPoints.ToString();
         }
 
-        private void Button_Vitality_Up_Click(object sender, RoutedEventArgs e)
+        private void Button_Vitality_Up_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (statPoints > 0)
             {
@@ -135,7 +135,7 @@ namespace RPG
             TextBloc_Hero_Stat_Points.Text = statPoints.ToString();
         }
 
-        private void Button_OK_Click(object sender, RoutedEventArgs e)
+        private void Button_OK_MouseDown(object sender, MouseButtonEventArgs e)
         {
             var heroStrenght = hero.Strength;
             var heroAgility = hero.Agility;
@@ -163,6 +163,11 @@ namespace RPG
             }
 
             Player.TempHeroSave(hero);
+        }
+
+        private void Button_Cancel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Close();
         }
     }
 }
