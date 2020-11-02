@@ -81,6 +81,10 @@ namespace RPG
             {
                 DamageEnemy();
             }
+            if(enemy.Health <= 0)
+            {
+                hero.LevelUp(enemy.Dead());
+            }
         }
 
         private void DamageEnemy()

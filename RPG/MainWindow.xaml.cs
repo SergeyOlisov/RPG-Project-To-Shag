@@ -10,6 +10,7 @@ using RPG.data.helpers;
 using System.Windows.Documents;
 using System.Collections.Generic;
 using System.Windows.Input;
+using RPG.data.hero;
 
 namespace RPG
 {
@@ -64,6 +65,7 @@ namespace RPG
             if (openFileDialog.ShowDialog() == true)
             {
                 hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
+                Player.TempHeroSave(hero);
             }
             else
             {

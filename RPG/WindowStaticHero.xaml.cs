@@ -44,7 +44,7 @@ namespace RPG
             TextBloc_Hero_Strenght.Text = hero.Strength.ToString();
             TextBloc_Hero_Vitality.Text = hero.Vitality.ToString();
             TextBloc_Hero_Stat_Points.Text = hero.StatPoints.ToString();
-            TextBloc_Hero_Experience.Text = hero.Experience.ToString();
+            TextBloc_Hero_Experience.Text = (hero.ExperienceToNextLevel - hero.Experience).ToString();
         }
 
         private void Button_Strenght_Down_Click(object sender, RoutedEventArgs e)
