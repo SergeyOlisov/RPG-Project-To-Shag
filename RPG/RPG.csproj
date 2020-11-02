@@ -7,18 +7,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Authors.png" />
     <None Remove="data\location\Enemy1.png" />
     <None Remove="data\location\Hero.png" />
     <None Remove="data\location\Location1.jpg" />
-    <None Remove="Menu.jpg"/>
+    <None Remove="Exit_x.png" />
+    <None Remove="load.png" />
+    <None Remove="Menu.jpg" />
+    <None Remove="New games.png" />
+    <None Remove="roll up.png" />
+    <None Remove="Setting.png" />
     <None Remove="WindowStaticHero.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Authors.png" />
     <Resource Include="data\location\Enemy1.png" />
     <Resource Include="data\location\Hero.png" />
     <Resource Include="data\location\Location1.jpg" />
-    <Resource Include="Menu.jpg"/>
+    <Resource Include="Exit_x.png" />
+    <Resource Include="load.png" />
+    <Resource Include="Menu.jpg" />
+    <Resource Include="New games.png" />
+    <Resource Include="roll up.png" />
+    <Resource Include="Setting.png" />
     <Resource Include="WindowStaticHero.png" />
   </ItemGroup>
 

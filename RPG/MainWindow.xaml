@@ -33,7 +33,7 @@
                 <Image x:Name="RollUp" Height="20" Width="30" Margin="10,0"  MouseDown="RollUp_MouseDown" Source="/roll up.png" >
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\roll up.png"/>
+                            <Setter Property="Source" Value="/roll up.png"/>
                             <Setter Property="Opacity" Value="0.5"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -46,10 +46,10 @@
                         <BlurEffect Radius="2"/>
                     </Image.Effect>
                 </Image>
-                <Image x:Name="Exit_x" Height="30" Width="30" Margin="10,0" Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Exit_x.png" MouseDown="Exit_x_MouseDown">
+                <Image x:Name="Exit_x" Height="30" Width="30" Margin="10,0" Source="/Exit_x.png" MouseDown="Exit_x_MouseDown">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Exit_x.png"/>
+                            <Setter Property="Source" Value="/Exit_x.png"/>
                             <Setter Property="Opacity" Value="0.5"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -73,10 +73,10 @@
                  Points="0,0, 0,30, 270,30, 270,0" MouseDown="Polygon_MouseDown_1"/>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="2">
-            <Image x:Name="NewGames" Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\New games.png" MouseDown="NewGames_MouseDown">
+            <Image x:Name="NewGames" Source="/New games.png" MouseDown="NewGames_MouseDown">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
-                        <Setter Property="Source" Value="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\New games.png"/>
+                        <Setter Property="Source" Value="/New games.png"/>
                         <Setter Property="Opacity" Value="0.6"/>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -91,10 +91,10 @@
             </Image>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="4">
-            <Image x:Name="Load" Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\load.png" MouseDown="Load_MouseDown">
+            <Image x:Name="Load" Source="/load.png" MouseDown="Load_MouseDown">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
-                        <Setter Property="Source" Value="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\load.png"/>
+                        <Setter Property="Source" Value="/load.png"/>
                         <Setter Property="Opacity" Value="0.6"/>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -109,10 +109,10 @@
             </Image>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="6">
-            <Image x:Name="Setting" Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Setting.png" MouseDown="Setting_MouseDown">
+            <Image x:Name="Setting" Source="/Setting.png" MouseDown="Setting_MouseDown">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
-                        <Setter Property="Source" Value="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Setting.png"/>
+                        <Setter Property="Source" Value="/Setting.png"/>
                         <Setter Property="Opacity" Value="0.6"/>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -127,10 +127,10 @@
             </Image>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="8">
-            <Image x:Name="Authors" Source="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Authors.png" MouseDown="Authors_MouseDown">
+            <Image x:Name="Authors" Source="/Authors.png" MouseDown="Authors_MouseDown">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
-                        <Setter Property="Source" Value="D:\Курсяк\RPG-Project-To-Shag\RPG\data\images\Authors.png"/>
+                        <Setter Property="Source" Value="/Authors.png"/>
                         <Setter Property="Opacity" Value="0.6"/>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
