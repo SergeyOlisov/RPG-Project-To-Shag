@@ -16,8 +16,8 @@ namespace RPG.data.hero
 {
     public static class Player
     {
-        private static Hero hero;
-        private const string tempHeroPath = "tempHero.json";
+        private const string tempHeroPath = ObjectHelper.TempHero;
+        public static Hero hero;
 
         public static Hero CreatePlayer()
         {

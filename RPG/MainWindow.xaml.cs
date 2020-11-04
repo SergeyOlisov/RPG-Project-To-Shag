@@ -15,6 +15,7 @@ namespace RPG
         private MediaPlayer music;
         public MainWindow()
         {
+            Player.GetHero();
             InitializeComponent();
             /*music = new MediaPlayer();
             music.Open(new Uri(@"../Music/music menu.wav", UriKind.RelativeOrAbsolute));
