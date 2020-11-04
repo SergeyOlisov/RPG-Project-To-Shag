@@ -6,9 +6,7 @@ namespace RPG
 {
     public static class ObjectHelper
     {
-        public static string Skelet()
-        {
-            return @"resources\enemies\Skelet.json";
-        }
+        public const string TempHero = @"..\resources\hero\tempHero.json";
+        public const string Skelet = @"..\resources\enemies\Skelet.json";
     }
 }

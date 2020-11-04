@@ -18,8 +18,7 @@ namespace RPG
     /// </summary>
     public partial class WindowStaticHero : Window
     {
-        public bool apply = false;
-        Hero hero = Player.GetHero();
+        Hero hero = Player.hero;
         int strenght;
         int agility;
         int intellect;
@@ -33,7 +32,6 @@ namespace RPG
             vitality = hero.Vitality;
             statPoints = hero.StatPoints;
             InitializeComponent();
-            apply = false;
             Update();
         }
 
@@ -163,14 +161,11 @@ namespace RPG
             {
                 hero.AgilityUp();
             }
-
-            Player.TempHeroSave(hero);
-
+            Player.hero = hero;
         }
 
         private void Button_Cancel_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            apply = true;
+        { 
             Close();
         }
     }

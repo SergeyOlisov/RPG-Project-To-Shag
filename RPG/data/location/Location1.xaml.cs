@@ -18,11 +18,10 @@ namespace RPG
     public partial class Location1 : Window
     {
 
-        static Hero hero = new Hero();
-        IAbility AttacSpell = hero;
+        IAbility AttacSpell = Player.hero;
         TaskCompletionSource<bool> End = new TaskCompletionSource<bool>();
         int mana = 10;
-        int tempManaHero = hero.Mana;
+        int tempManaHero = Player.hero.Mana;
         Enemy enemy = new Enemy()
         {
             Name = "Skelet",
@@ -31,21 +30,21 @@ namespace RPG
             Health = 15,
             Mana = 15
         };
-        IAbility temp2 = hero;
+        IAbility temp2 = Player.hero;
 
         void ShowStaticHero()
         {
             ShowStatistics.Items.Add("");
             ShowStatistics.Items.Add("Static Hero");
-            ShowStatistics.Items.Add("Name " + hero.Name);
-            ShowStatistics.Items.Add("Health " + hero.Health);
-            ShowStatistics.Items.Add("Mana " + hero.Mana);
-            ShowStatistics.Items.Add("Level: " + hero.Level);
-            ShowStatistics.Items.Add("Experience: " + hero.Experience);
-            ShowStatistics.Items.Add("Strength: " + hero.Strength);
-            ShowStatistics.Items.Add("Agility " + hero.Agility);
-            ShowStatistics.Items.Add("Intellect: " + hero.Intellect);
-            ShowStatistics.Items.Add("Vitality: " + hero.Vitality);
+            ShowStatistics.Items.Add("Name " + Player.hero.Name);
+            ShowStatistics.Items.Add("Health " + Player.hero.Health);
+            ShowStatistics.Items.Add("Mana " + Player.hero.Mana);
+            ShowStatistics.Items.Add("Level: " + Player.hero.Level);
+            ShowStatistics.Items.Add("Experience: " + Player.hero.Experience);
+            ShowStatistics.Items.Add("Strength: " + Player.hero.Strength);
+            ShowStatistics.Items.Add("Agility " + Player.hero.Agility);
+            ShowStatistics.Items.Add("Intellect: " + Player.hero.Intellect);
+            ShowStatistics.Items.Add("Vitality: " + Player.hero.Vitality);
             ShowStatistics.Items.Add("");
         }
 
@@ -74,8 +73,8 @@ namespace RPG
         private void Attack_Click(object sender, RoutedEventArgs e)
         {
             ShowStatistics.Items.Add("");
-            enemy.Health -= hero.Damage();
-            ShowStatistics.Items.Add("Hero deals damage: " + hero.Damage());
+            enemy.Health -= Player.hero.Damage();
+            ShowStatistics.Items.Add("Hero deals damage: " + Player.hero.Damage());
             ShowStatistics.Items.Add("Enemy Health: " + enemy.Health);
             ShowStatistics.Items.Add("");
             if (!CheckHP())
@@ -84,21 +83,23 @@ namespace RPG
             }
             if(enemy.Health <= 0)
             {
-                hero.LevelUp(enemy.Dead());
+                Player.hero.LevelUp(enemy.Dead());
+                ShowStatistics.Items.Add(Player.hero.Experience);
+                Player.TempHeroSave(Player.hero);
             }
         }
 
         private void DamageEnemy()
         {
-            hero.Health -= enemy.Damage();
+            Player.hero.Health -= enemy.Damage();
             ShowStatistics.Items.Add("Enemy deals damage: " + enemy.Damage());
-            ShowStatistics.Items.Add("Health Hero: " + hero.Health);
+            ShowStatistics.Items.Add("Health Hero: " + Player.hero.Health);
             ShowStatistics.Items.Add("");
             CheckHP();
         }
         private bool CheckHP()
         {
-            if (hero.Health <= 0 || enemy.Health <= 0)
+            if (Player.hero.Health <= 0 || enemy.Health <= 0)
             {
                 End.SetResult(true);
                 return true;
@@ -122,7 +123,7 @@ namespace RPG
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
             if (saveFileDialog.ShowDialog() == true)
-                Editor.HeroSerialize(hero, saveFileDialog.FileName);
+                Editor.HeroSerialize(Player.hero, saveFileDialog.FileName);
         }
         private void Loading_Click(object sender, RoutedEventArgs e)
         {
@@ -131,7 +132,7 @@ namespace RPG
             if (openFileDialog.ShowDialog() == true)
             {
                 ShowStatistics.Items.Add("File downloaded");
-                hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
+                Player.hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
             }
             else
             {
@@ -142,19 +143,14 @@ namespace RPG
 
         private void Ability_Click(object sender, RoutedEventArgs e)
         {
-            hero.Mana -= 10;
-            ShowStatistics.Items.Add("Mana " + hero.Mana);
+            Player.hero.Mana -= 10;
+            ShowStatistics.Items.Add("Mana " + Player.hero.Mana);
         }
 
-        private  async void StaticHero_Click(object sender, RoutedEventArgs e)
+        private void StaticHero_Click(object sender, RoutedEventArgs e)
         {
-            Player.TempHeroSave(hero);
             var WindowStaticHero = new WindowStaticHero();
             WindowStaticHero.Show();
-            TaskCompletionSource<bool> Apply = new TaskCompletionSource<bool>();
-            await Apply.Task;
-            Apply.SetResult(WindowStaticHero.apply);
-            hero = Player.GetHero();
         }
 
 

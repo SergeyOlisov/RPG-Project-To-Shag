@@ -55,7 +55,6 @@ namespace RPG
 
         public void LevelUp(int experience)
         {
-            UpdateHero();
             if (experience >= ExperienceToNextLevel - Experience)
             {
                 experience -= ExperienceToNextLevel - Experience;
@@ -64,9 +63,10 @@ namespace RPG
                 SkillPoints += 1;
                 StatPoints += 5;
                 LevelUp(experience);
+                UpdateHero();
             }
 
-            Experience = experience;
+            Experience += experience;
         }
         
         public int Damage()

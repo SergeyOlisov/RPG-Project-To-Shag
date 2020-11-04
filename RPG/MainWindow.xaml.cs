@@ -20,6 +20,7 @@ namespace RPG
         static Hero hero = new Hero();
         public MainWindow()
         {
+            Player.GetHero();
             InitializeComponent();
         }
         private void Exit_x_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
