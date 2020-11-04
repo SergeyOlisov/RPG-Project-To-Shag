@@ -9,8 +9,11 @@
   <ItemGroup>
     <None Remove="Authors.png" />
     <None Remove="cancel.png" />
+    <None Remove="data\location\Ability.png" />
+    <None Remove="data\location\Attack.png" />
     <None Remove="data\location\Enemy1.png" />
     <None Remove="data\location\Hero.png" />
+    <None Remove="data\location\HeroStat.png" />
     <None Remove="data\location\Location1.jpg" />
     <None Remove="Exit_x.png" />
     <None Remove="load.png" />
@@ -27,8 +30,11 @@
   <ItemGroup>
     <Resource Include="Authors.png" />
     <Resource Include="cancel.png" />
+    <Resource Include="data\location\Ability.png" />
+    <Resource Include="data\location\Attack.png" />
     <Resource Include="data\location\Enemy1.png" />
     <Resource Include="data\location\Hero.png" />
+    <Resource Include="data\location\HeroStat.png" />
     <Resource Include="data\location\Location1.jpg" />
     <Resource Include="Exit_x.png" />
     <Resource Include="load.png" />

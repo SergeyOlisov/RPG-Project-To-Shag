@@ -1,14 +1,10 @@
 ﻿using System;
-using System.IO;
-using System.Text.Json.Serialization;
 using System.Windows;
-using System.Runtime.Serialization.Json;
-using System.Text.Json;
-using System.Threading.Tasks;
 using Microsoft.Win32;
-using RPG.data.helpers;
-using System.ComponentModel;
+using System.Windows.Input;
 using RPG.data.hero;
+using System.Windows.Media;
+using System.IO;
 
 namespace RPG
 {
@@ -18,149 +14,67 @@ namespace RPG
     public partial class Location1 : Window
     {
 
-        static Hero hero = new Hero();
-        IAbility AttacSpell = hero;
-        TaskCompletionSource<bool> End = new TaskCompletionSource<bool>();
-        int mana = 10;
-        int tempManaHero = hero.Mana;
-        Enemy enemy = new Enemy()
-        {
-            Name = "Skelet",
-            Level = 1,
-            Experience = 20,
-            Health = 15,
-            Mana = 15
-        };
-        IAbility temp2 = hero;
-
-        void ShowStaticHero()
-        {
-            ShowStatistics.Items.Add("");
-            ShowStatistics.Items.Add("Static Hero");
-            ShowStatistics.Items.Add("Name " + hero.Name);
-            ShowStatistics.Items.Add("Health " + hero.Health);
-            ShowStatistics.Items.Add("Mana " + hero.Mana);
-            ShowStatistics.Items.Add("Level: " + hero.Level);
-            ShowStatistics.Items.Add("Experience: " + hero.Experience);
-            ShowStatistics.Items.Add("Strength: " + hero.Strength);
-            ShowStatistics.Items.Add("Agility " + hero.Agility);
-            ShowStatistics.Items.Add("Intellect: " + hero.Intellect);
-            ShowStatistics.Items.Add("Vitality: " + hero.Vitality);
-            ShowStatistics.Items.Add("");
-        }
-
-        AttackSpell attackSpell = new AttackSpell()
-        {
-            Name = "test",
-            Value = 10,
-            ManaCoast = 5
-        };
-
-        Buff buffSpell = new Buff()
-        {
-            Name = "test Buff",
-            Value = 5,
-            ManaCoast = 5
-        };
-
-
-
+ 
         public Location1()
         {
-            InitializeComponent();
-            EndBattle();
+            InitializeComponent();   
         }
-
-        private void Attack_Click(object sender, RoutedEventArgs e)
-        {
-            ShowStatistics.Items.Add("");
-            enemy.Health -= hero.Damage();
-            ShowStatistics.Items.Add("Hero deals damage: " + hero.Damage());
-            ShowStatistics.Items.Add("Enemy Health: " + enemy.Health);
-            ShowStatistics.Items.Add("");
-            if (!CheckHP())
-            {
-                DamageEnemy();
-            }
-            if(enemy.Health <= 0)
-            {
-                hero.LevelUp(enemy.Dead());
-            }
-        }
-
-        private void DamageEnemy()
-        {
-            hero.Health -= enemy.Damage();
-            ShowStatistics.Items.Add("Enemy deals damage: " + enemy.Damage());
-            ShowStatistics.Items.Add("Health Hero: " + hero.Health);
-            ShowStatistics.Items.Add("");
-            CheckHP();
-        }
-        private bool CheckHP()
-        {
-            if (hero.Health <= 0 || enemy.Health <= 0)
-            {
-                End.SetResult(true);
-                return true;
-                //дополнить 
-                //закрытие окна или невозможность нажать на атаку
-            }
-            return false;
-        }
-        private async void EndBattle()
-        {
-            await End.Task;
-            ShowStatistics.Items.Add("Finish");
-        }
-
-        private void Exit_Click(object sender, RoutedEventArgs e)
+        private void Exit_x_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             Close();
         }
-        private void Save_Click(object sender, RoutedEventArgs e)
+        private void RollUp_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
-            if (saveFileDialog.ShowDialog() == true)
-                Editor.HeroSerialize(hero, saveFileDialog.FileName);
+            WindowState = WindowState.Minimized;
         }
-        private void Loading_Click(object sender, RoutedEventArgs e)
+
+        private void Polygon_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
-            if (openFileDialog.ShowDialog() == true)
+            if (e.ChangedButton == MouseButton.Left)
             {
-                ShowStatistics.Items.Add("File downloaded");
-                hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
-            }
-            else
-            {
-                ShowStatistics.Items.Add("File not uploaded");
+                DragMove();
             }
         }
 
-
-        private void Ability_Click(object sender, RoutedEventArgs e)
+        private void Polygon_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
-            hero.Mana -= 10;
-            ShowStatistics.Items.Add("Mana " + hero.Mana);
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                DragMove();
+            }
         }
 
-        private  async void StaticHero_Click(object sender, RoutedEventArgs e)
+        private void Polygon_MouseDown_2(object sender, MouseButtonEventArgs e)
         {
-            Player.TempHeroSave(hero);
-            var WindowStaticHero = new WindowStaticHero();
-            WindowStaticHero.Show();
-            TaskCompletionSource<bool> Apply = new TaskCompletionSource<bool>();
-            await Apply.Task;
-            Apply.SetResult(WindowStaticHero.apply);
-            hero = Player.GetHero();
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                DragMove();
+            }
         }
 
-
-
-        private void Mana_Hero_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void Polygon_MouseDown_3(object sender, MouseButtonEventArgs e)
         {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                DragMove();
+            }
+        }
+
+        private void Ex_Hero_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var WindowsStaticHero = new WindowStaticHero();
+            WindowsStaticHero.Show();
+            Close();
+        }
+
+        private void Ability_Hero_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void Attack_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

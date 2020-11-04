@@ -1,16 +1,10 @@
 ﻿using System;
-using System.IO;
-using System.Text.Json.Serialization;
 using System.Windows;
-using System.Runtime.Serialization.Json;
-using System.Text.Json;
-using System.Threading.Tasks;
 using Microsoft.Win32;
-using RPG.data.helpers;
-using System.Windows.Documents;
-using System.Collections.Generic;
 using System.Windows.Input;
 using RPG.data.hero;
+using System.Windows.Media;
+using System.IO;
 
 namespace RPG
 {
@@ -18,9 +12,13 @@ namespace RPG
     public partial class MainWindow : Window
     {
         static Hero hero = new Hero();
+        private MediaPlayer music;
         public MainWindow()
         {
             InitializeComponent();
+            /*music = new MediaPlayer();
+            music.Open(new Uri(@"../Music/music menu.wav", UriKind.RelativeOrAbsolute));
+            music.Play();*/
         }
         private void Exit_x_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
