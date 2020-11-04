@@ -9,6 +9,7 @@ using Microsoft.Win32;
 using RPG.data.helpers;
 using System.ComponentModel;
 using RPG.data.hero;
+using RPG.data.location;
 
 namespace RPG
 {
@@ -83,7 +84,7 @@ namespace RPG
             }
             if(enemy.Health <= 0)
             {
-                Player.hero.LevelUp(enemy.Dead());
+                Battle.IsEnemyDead(ref enemy);
                 ShowStatistics.Items.Add(Player.hero.Experience);
                 Player.TempHeroSave(Player.hero);
             }
