@@ -51,12 +51,10 @@ namespace RPG
 
     public class Buff : Ability
     {
-        public int Value { set; get; }
     }
 
     public class AttackSpell : Ability
     {
-        public int Value { set; get; }
     }
 }
 
