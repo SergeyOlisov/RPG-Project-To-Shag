@@ -11,6 +11,7 @@ namespace RPG
         public int Level { set; get; } //требуемый уровень
 <<<<<<< Updated upstream
         public int Mana { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Value { set; get; }
 
         public Ability() { }
 
