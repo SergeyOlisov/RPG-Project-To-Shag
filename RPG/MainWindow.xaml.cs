@@ -67,6 +67,7 @@ namespace RPG
             {
                 hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
                 Player.TempHeroSave(hero);
+                Player.hero = hero;
             }
             else
             {
