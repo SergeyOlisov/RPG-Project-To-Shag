@@ -6,7 +6,6 @@ namespace RPG
 {
     interface IAbility
     {
-
         public int Mana { set; get; }
 
 

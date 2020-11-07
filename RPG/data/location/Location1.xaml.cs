@@ -19,7 +19,7 @@ namespace RPG
     public partial class Location1 : Window
     {
 
-        IAbility AttacSpell = Player.hero;
+        IAbility attacSpell = Player.hero;
         TaskCompletionSource<bool> End = new TaskCompletionSource<bool>();
         int mana = 10;
         int tempManaHero = Player.hero.Mana;
@@ -145,6 +145,8 @@ namespace RPG
         private void Ability_Click(object sender, RoutedEventArgs e)
         {
             Player.hero.Mana -= 10;
+            Player.hero.Ability.Find(abil => abil == attackSpell);
+            enemy.Health -= attackSpell.AttackAbility(attackSpell);
             ShowStatistics.Items.Add("Mana " + Player.hero.Mana);
         }
 

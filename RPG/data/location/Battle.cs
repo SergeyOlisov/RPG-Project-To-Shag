@@ -15,10 +15,19 @@ namespace RPG.data.location
         {
             enemy.Health -= Player.hero.Damage();
             IsEnemyDead(ref enemy);
+
+            Hero hero = new Hero();
+            Enemy enemy1 = new Enemy();
         }
 
-        public static void SpellCaste(ref Enemy enemy, Ability ability) 
+        public static void SpellCaste(ref Enemy enemy, ref Hero hero, Ability ability) 
         {
+            if(hero.Mana <= ability.ManaCoast)
+            {
+                return;
+            }
+            hero.Mana -= ability.ManaCoast;
+
             if (ability is AttackSpell attack)
             {
                 enemy.Health -= spell.AttackAbility(ability);
