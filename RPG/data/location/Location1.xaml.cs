@@ -5,16 +5,18 @@ using System.Windows.Input;
 using RPG.data.hero;
 using System.Windows.Media;
 using System.IO;
+using RPG.data.location;
 
 namespace RPG
 {
     public partial class Location1 : Window
     {
-
+        Enemy enemy = new Enemy();
  
         public Location1()
         {
             InitializeComponent();
+            text_block_hp_enemy.Text = enemy.Health.ToString();
         }
         private void Exit_x_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -70,7 +72,8 @@ namespace RPG
 
         private void Attack_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            Battle.HeroAttack(ref enemy);
+            text_block_hp_enemy.Text = enemy.Health.ToString();
         }
     }
 }

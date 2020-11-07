@@ -7,7 +7,6 @@ namespace RPG
     public class Enemy
     {
         public string Name { set; get; }
-        public int Number { set; get; }
 
         public int Level { set; get; }
         public int Experience { set; get; }
@@ -17,7 +16,15 @@ namespace RPG
 
         public List<Ability> Ability { set; get; } = new List<Ability>();
 
-        public Enemy() { }
+        public Enemy() 
+        {
+            Level = 1;
+            Name = "Skelet";
+            Health = 150;
+            Mana = 20;
+            //Ability = abilities;
+            Experience = 100;
+        }
 
         public Enemy(string name, Hero hero) // для тестирования
         {
@@ -35,7 +42,7 @@ namespace RPG
             Health = health;
             Mana = mana;
             Ability = abilities;
-            Experience = level * 20 * (Health / 20) * ((Mana * Ability.Count) / 20);
+            Experience = level * 20 * (Health / 20) * ((Mana) / 20);
         }
 
         public int Damage() //тестовый урон
@@ -59,7 +66,6 @@ namespace RPG
 
         public void UpdateEnemy()
         {
-            Number++;
             Level++;
             Health = Health * 2;
             Mana = Mana * 2;

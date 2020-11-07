@@ -14,6 +14,7 @@ namespace RPG
         public MainWindow()
         {
             Player.QuickLoad();
+            Editor.EnemySerialize(new Enemy());
             InitializeComponent();
         }
         private void Exit_x_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
