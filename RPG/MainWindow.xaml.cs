@@ -66,7 +66,6 @@ namespace RPG
             if (openFileDialog.ShowDialog() == true)
             {
                 hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
-                Player.TempHeroSave(hero);
                 Player.hero = hero;
             }
             else
