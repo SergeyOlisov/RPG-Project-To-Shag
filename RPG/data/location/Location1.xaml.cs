@@ -8,16 +8,13 @@ using System.IO;
 
 namespace RPG
 {
-    /// <summary>
-    /// Логика взаимодействия для Location1.xaml
-    /// </summary>
     public partial class Location1 : Window
     {
 
  
         public Location1()
         {
-            InitializeComponent();   
+            InitializeComponent();
         }
         private void Exit_x_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -64,7 +61,6 @@ namespace RPG
         {
             var WindowsStaticHero = new WindowStaticHero();
             WindowsStaticHero.Show();
-            Close();
         }
 
         private void Ability_Hero_MouseDown(object sender, MouseButtonEventArgs e)

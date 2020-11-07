@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPG.data.hero;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,26 +9,55 @@ namespace RPG
     {
 
         public string Name { set; get; }
-        public int ManaCoast { set; get; } //расход маны на абилку
+        public int ManaCast { set; get; } //расход маны на абилку
         public int Level { set; get; } //требуемый уровень
+
+        public int Value { set; get; }
 
         public Ability() { }
 
-        public Ability(string name, int manaCoast)
+        public Ability(string name, int manaCast)
         {
             Name = name;
-            ManaCoast = manaCoast;
+            ManaCast = manaCast;
+        }
+
+        public int AttackAbility(Ability ability)
+        {
+            {
+                if (Player.hero.Mana >= ability.ManaCast)
+                {
+                    if (ability is AttackSpell spell)
+                    {
+                        Player.hero.Mana -= spell.ManaCast;
+                        return spell.Value;
+                    }
+                }
+
+                return 0;
+            }
+        }
+
+        public int Buff(Ability ability)
+        {
+            if (Player.hero.Mana >= ability.ManaCast)
+            {
+                if (ability is Buff spell)
+                {
+                    Player.hero.Mana -= spell.ManaCast;
+                    return spell.Value;
+                }
+            }
+            return 0;
         }
     }
 
     public class Buff : Ability
     {
-        public int Value { set; get; }
     }
 
     public class AttackSpell : Ability
     {
-        public int Value { set; get; }
     }
 }
 

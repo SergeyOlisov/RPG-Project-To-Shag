@@ -46,13 +46,13 @@ namespace RPG.data.hero
                 Editor.HeroSerialize(hero, saveFileDialog.FileName);
         }
 
-        public static Hero GetHero()
+        public static Hero QuickLoad()
         {
             hero = Editor.HeroDeserialize(tempHeroPath);
             return hero;
         }
 
-        public static void TempHeroSave(Hero playerHero)
+        public static void QuickSave(Hero playerHero)
         {
             Editor.HeroSerialize(playerHero, tempHeroPath);
         }

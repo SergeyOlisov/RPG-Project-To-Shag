@@ -7,45 +7,45 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Authors.png" />
-    <None Remove="cancel.png" />
     <None Remove="data\location\Ability.png" />
     <None Remove="data\location\Attack.png" />
     <None Remove="data\location\Enemy1.png" />
     <None Remove="data\location\Hero.png" />
     <None Remove="data\location\HeroStat.png" />
     <None Remove="data\location\Location1.jpg" />
-    <None Remove="Exit_x.png" />
-    <None Remove="load.png" />
-    <None Remove="Menu.jpg" />
-    <None Remove="minus.png" />
-    <None Remove="New games.png" />
-    <None Remove="OK.png" />
-    <None Remove="plus.png" />
-    <None Remove="roll up.png" />
-    <None Remove="Setting.png" />
-    <None Remove="WindowStaticHero.png" />
+    <None Remove="data\images\Menu.jpg" />
+    <None Remove="data\images\Newgames.png" />
+    <None Remove="data\images\cancel.png" />
+    <None Remove="data\images\minus.png" />
+    <None Remove="data\images\Exit_x.png" />
+    <None Remove="data\images\rollup.png" />
+    <None Remove="data\images\Setting.png" />
+    <None Remove="data\images\Load.png" />
+    <None Remove="data\images\Authors.png" />
+    <None Remove="data\images\windowstatichero.png" />
+    <None Remove="data\images\OK.png" />
+    <None Remove="data\images\Plus.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Authors.png" />
-    <Resource Include="cancel.png" />
     <Resource Include="data\location\Ability.png" />
     <Resource Include="data\location\Attack.png" />
     <Resource Include="data\location\Enemy1.png" />
     <Resource Include="data\location\Hero.png" />
     <Resource Include="data\location\HeroStat.png" />
     <Resource Include="data\location\Location1.jpg" />
-    <Resource Include="Exit_x.png" />
-    <Resource Include="load.png" />
-    <Resource Include="Menu.jpg" />
-    <Resource Include="minus.png" />
-    <Resource Include="New games.png" />
-    <Resource Include="OK.png" />
-    <Resource Include="plus.png" />
-    <Resource Include="roll up.png" />
-    <Resource Include="Setting.png" />
-    <Resource Include="WindowStaticHero.png" />
+    <Resource Include="data\images\Menu.jpg" />
+    <Resource Include="data\images\Newgames.png" />
+    <Resource Include="data\images\cancel.png" />
+    <Resource Include="data\images\minus.png" />
+    <Resource Include="data\images\Exit_x.png" />
+    <Resource Include="data\images\rollup.png" />
+    <Resource Include="data\images\Setting.png" />
+    <Resource Include="data\images\Load.png" />
+    <Resource Include="data\images\Authors.png" />
+    <Resource Include="data\images\windowstatichero.png" />
+    <Resource Include="data\images\OK.png" />
+    <Resource Include="data\images\Plus.png" />
   </ItemGroup>
 
   <ItemGroup>

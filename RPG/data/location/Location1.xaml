@@ -36,10 +36,10 @@
             <Polygon Fill="Black" Opacity="0.6"
                  Points="0,0 0,30 270,30 270,0" MouseDown="Polygon_MouseDown" />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Image x:Name="RollUp" Height="20" Width="30" Margin="10,0"  MouseDown="RollUp_MouseDown" Source="/roll up.png" >
+                <Image x:Name="RollUp" Height="20" Width="30" Margin="10,0"  MouseDown="RollUp_MouseDown" Source="/data/images/rollup.png" >
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/roll up.png"/>
+                            <Setter Property="Source" Value="/data/images/rollup.png"/>
                             <Setter Property="Opacity" Value="0.5"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -52,10 +52,10 @@
                         <BlurEffect Radius="2"/>
                     </Image.Effect>
                 </Image>
-                <Image x:Name="Exit_x" Height="30" Width="30" Margin="10,0" Source="/Exit_x.png" MouseDown="Exit_x_MouseDown">
+                <Image x:Name="Exit_x" Height="30" Width="30" Margin="10,0" Source="/data/images/Exit_x.png" MouseDown="Exit_x_MouseDown">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/Exit_x.png"/>
+                            <Setter Property="Source" Value="/data/images/Exit_x.png"/>
                             <Setter Property="Opacity" Value="0.5"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -104,7 +104,7 @@
                 <Image x:Name="Ex_Hero" Source="/data/location/HeroStat.png" MouseDown="Ex_Hero_MouseDown" >
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/Setting.png"/>
+                            <Setter Property="Source" Value="/data/location/HeroStat.png"/>
                             <Setter Property="Opacity" Value="0.6"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -122,7 +122,7 @@
                 <Image x:Name="Ability_Hero" Source="/data/location/Ability.png" MouseDown="Ability_Hero_MouseDown" >
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/Setting.png"/>
+                            <Setter Property="Source" Value="/data/location/Ability.png"/>
                             <Setter Property="Opacity" Value="0.6"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -140,7 +140,7 @@
                 <Image x:Name="Attack" Source="/data/location/Attack.png" MouseDown="Attack_MouseDown" >
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/Setting.png"/>
+                            <Setter Property="Source" Value="/data/location/Attack.png"/>
                             <Setter Property="Opacity" Value="0.6"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">

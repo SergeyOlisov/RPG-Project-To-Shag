@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="WindowStaticHero" Height="450" Width="300">
     <Window.Background>
-        <ImageBrush ImageSource="/WindowStaticHero.png"/>
+        <ImageBrush ImageSource="/data/images/windowstatichero.png"/>
     </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -45,10 +45,10 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <Image x:Name="Button_Strenght_Down" Source="/minus.png" Margin="20,10,0,010" MouseDown="Button_Strenght_Down_MouseDown">
+                <Image x:Name="Button_Strenght_Down" Source="/data/images/minus.png" Margin="20,10,0,010" MouseDown="Button_Strenght_Down_MouseDown">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/Setting.png"/>
+                            <Setter Property="Source" Value="/data/images/minus.png"/>
                             <Setter Property="Opacity" Value="0.6"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -63,10 +63,10 @@
                 </Image>
             </Grid>
             <Grid Grid.Column="2">
-                <Image x:Name="Button_Strenght_Up" Source="/plus.png" Margin="0,10,20,10" MouseDown="Button_Strenght_Up_MouseDown">
+                <Image x:Name="Button_Strenght_Up" Source="/data/images/Plus.png" Margin="0,10,20,10" MouseDown="Button_Strenght_Up_MouseDown">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/Setting.png"/>
+                            <Setter Property="Source" Value="/data/images/Plus.png"/>
                             <Setter Property="Opacity" Value="0.6"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -89,10 +89,10 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <Image x:Name="Button_Agility_Down" Source="/minus.png" Margin="20,10,0,010" MouseDown="Button_Agility_Down_MouseDown">
+                <Image x:Name="Button_Agility_Down" Source="/data/images/minus.png" Margin="20,10,0,010" MouseDown="Button_Agility_Down_MouseDown">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/Setting.png"/>
+                            <Setter Property="Source" Value="/data/images/minus.png"/>
                             <Setter Property="Opacity" Value="0.6"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -107,10 +107,10 @@
                 </Image>
             </Grid>
             <Grid Grid.Column="2">
-                <Image x:Name="Button_Agility_Up" Source="/plus.png" Margin="0,10,20,10" MouseDown="Button_Agility_Up_MouseDown">
+                <Image x:Name="Button_Agility_Up" Source="/data/images/Plus.png" Margin="0,10,20,10" MouseDown="Button_Agility_Up_MouseDown">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/Setting.png"/>
+                            <Setter Property="Source" Value="/data/images/Plus.png"/>
                             <Setter Property="Opacity" Value="0.6"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -133,10 +133,10 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <Image x:Name="Button_Intelect_Down" Source="/minus.png" Margin="20,10,0,010" MouseDown="Button_Intelect_Down_MouseDown">
+                <Image x:Name="Button_Intelect_Down" Source="/data/images/minus.png" Margin="20,10,0,010" MouseDown="Button_Intelect_Down_MouseDown">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/Setting.png"/>
+                            <Setter Property="Source" Value="/data/images/minus.png"/>
                             <Setter Property="Opacity" Value="0.6"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -151,10 +151,10 @@
                 </Image>
             </Grid>
             <Grid Grid.Column="2">
-                <Image x:Name="Button_Intelect_Up" Source="/plus.png" Margin="0,10,20,10" MouseDown="Button_Intelect_Up_MouseDown">
+                <Image x:Name="Button_Intelect_Up" Source="/data/images/Plus.png" Margin="0,10,20,10" MouseDown="Button_Intelect_Up_MouseDown">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/Setting.png"/>
+                            <Setter Property="Source" Value="/data/images/Plus.png"/>
                             <Setter Property="Opacity" Value="0.6"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -177,10 +177,10 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <Image x:Name="Button_Vitality_Down" Source="/minus.png" Margin="20,10,0,010" MouseDown="Button_Vitality_Down_MouseDown">
+                <Image x:Name="Button_Vitality_Down" Source="/data/images/minus.png" Margin="20,10,0,010" MouseDown="Button_Vitality_Down_MouseDown">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/Setting.png"/>
+                            <Setter Property="Source" Value="/data/images/minus.png"/>
                             <Setter Property="Opacity" Value="0.6"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -195,10 +195,10 @@
                 </Image>
             </Grid>
             <Grid Grid.Column="2">
-                <Image x:Name="Button_Vitality_Up" Source="/plus.png" Margin="0,10,20,10" MouseDown="Button_Vitality_Up_MouseDown">
+                <Image x:Name="Button_Vitality_Up" Source="/data/images/Plus.png" Margin="0,10,20,10" MouseDown="Button_Vitality_Up_MouseDown">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/Setting.png"/>
+                            <Setter Property="Source" Value="/data/images/Plus.png"/>
                             <Setter Property="Opacity" Value="0.6"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -221,10 +221,10 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="1">
-                <Image x:Name="Button_OK" Source="/OK.png" Margin="-80" MouseDown="Button_OK_MouseDown" >
+                <Image x:Name="Button_OK" Source="/data/images/OK.png" Margin="-80" MouseDown="Button_OK_MouseDown" >
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/Setting.png"/>
+                            <Setter Property="Source" Value="/data/images/OK.png"/>
                             <Setter Property="Opacity" Value="0.6"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -246,10 +246,10 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="1">
-                <Image x:Name="Button_Cancel" Source="/cancel.png" Margin="-60" MouseDown="Button_Cancel_MouseDown">
+                <Image x:Name="Button_Cancel" Source="/data/images/cancel.png" Margin="-60" MouseDown="Button_Cancel_MouseDown">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">
-                            <Setter Property="Source" Value="/Setting.png"/>
+                            <Setter Property="Source" Value="/data/images/cancel.png"/>
                             <Setter Property="Opacity" Value="0.6"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">

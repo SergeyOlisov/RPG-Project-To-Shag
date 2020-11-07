@@ -11,15 +11,10 @@ namespace RPG
 
     public partial class MainWindow : Window
     {
-        static Hero hero = new Hero();
-        private MediaPlayer music;
         public MainWindow()
         {
-            Player.GetHero();
+            Player.QuickLoad();
             InitializeComponent();
-            /*music = new MediaPlayer();
-            music.Open(new Uri(@"../Music/music menu.wav", UriKind.RelativeOrAbsolute));
-            music.Play();*/
         }
         private void Exit_x_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -52,6 +47,10 @@ namespace RPG
         }
         private void NewGames_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            if(Player.hero == null)
+            {
+                Player.CreatePlayer();
+            }
             var Location1 = new Location1();
             Location1.Show();
             Close();
@@ -63,8 +62,7 @@ namespace RPG
             openFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
-                hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
-                Player.TempHeroSave(hero);
+                Player.hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
             }
             else
             {

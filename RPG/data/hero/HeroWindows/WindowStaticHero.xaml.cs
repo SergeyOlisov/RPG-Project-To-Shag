@@ -162,10 +162,11 @@ namespace RPG
                 hero.AgilityUp();
             }
             Player.hero = hero;
+            Close();
         }
 
         private void Button_Cancel_MouseDown(object sender, MouseButtonEventArgs e)
-        { 
+        {
             Close();
         }
     }

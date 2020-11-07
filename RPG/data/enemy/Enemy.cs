@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RPG
 {
-    public class Enemy : IAbility
+    public class Enemy
     {
         public string Name { set; get; }
         public int Number { set; get; }

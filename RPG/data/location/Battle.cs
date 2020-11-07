@@ -8,25 +8,22 @@ namespace RPG.data.location
 {
     public abstract class Battle
     {
-        static IAbility spell = Player.hero;
-        TaskCompletionSource<bool> End = new TaskCompletionSource<bool>();
-
-        public static void Attack(ref Enemy enemy)
+        public static void HeroAttack(ref Enemy enemy)
         {
             enemy.Health -= Player.hero.Damage();
             IsEnemyDead(ref enemy);
         }
 
-        public static void SpellCaste(ref Enemy enemy, Ability ability) 
+        public static void HeroSpellCaste(ref Enemy enemy, Ability ability) 
         {
             if (ability is AttackSpell attack)
             {
-                enemy.Health -= spell.AttackAbility(ability);
+                enemy.Health -= ability.AttackAbility(ability);
                 IsEnemyDead(ref enemy);
             }
             else 
             {
-                Player.hero.Health += spell.Buff(ability);
+                Player.hero.Health += ability.Buff(ability);
                 if (Player.hero.MaxHealth < Player.hero.Health) 
                 {
                     Player.hero.Health = Player.hero.MaxHealth;
@@ -44,7 +41,7 @@ namespace RPG.data.location
 
         public static void EndBattle() 
         {
-            Player.TempHeroSave(Player.hero);
+            Player.QuickSave(Player.hero);
         }
     }
 }
