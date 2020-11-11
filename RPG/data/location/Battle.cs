@@ -16,22 +16,11 @@ namespace RPG.data.location
 
         public static void HeroSpellCaste(ref Enemy enemy, Ability ability) 
         {
-            if (ability is AttackSpell attack)
-            {
-                enemy.Health -= ability.AttackAbility(ability);
-                IsEnemyDead(ref enemy);
-            }
-            else 
-            {
-                Player.hero.Health += ability.Buff(ability);
-                if (Player.hero.MaxHealth < Player.hero.Health) 
-                {
-                    Player.hero.Health = Player.hero.MaxHealth;
-                }
-            }
+            enemy.Health -= ability.AttackAbility(ability);
+            IsEnemyDead(ref enemy);
         }
 
-        public static void IsEnemyDead(ref Enemy enemy) 
+        private static void IsEnemyDead(ref Enemy enemy) 
         {
             if (enemy.Health <= 0)
             {
@@ -39,7 +28,7 @@ namespace RPG.data.location
             }
         }
 
-        public static void EndBattle() 
+        private static void EndBattle() 
         {
             Player.QuickSave(Player.hero);
         }

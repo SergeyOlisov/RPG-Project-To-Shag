@@ -65,11 +65,11 @@ namespace RPG
             }
         }
 
-        public static void AttackSpellSerialize(AttackSpell ability)
+        public static void AttackSpellSerialize(Ability ability)
         {
             using (FileStream fs = new FileStream(ability.Name + ".json", FileMode.OpenOrCreate))
             {
-                JsonSerializer.SerializeAsync<AttackSpell>(fs, ability);
+                JsonSerializer.SerializeAsync<Ability>(fs, ability);
             }
         }
 
@@ -77,24 +77,16 @@ namespace RPG
         {
             using (FileStream fs = new FileStream(path, FileMode.Open))
             {
-                var ability = JsonSerializer.DeserializeAsync<AttackSpell>(fs).Result;
+                var ability = JsonSerializer.DeserializeAsync<Ability>(fs).Result;
                 return ability;
             }
         }
 
-        public static void AttackSpellsSerialize(List<AttackSpell> attackSpells)
+        public static void AttackSpellsSerialize(List<Ability> attackSpells)
         {
             using (FileStream fs = new FileStream("AllAttackSpells" + ".json", FileMode.OpenOrCreate))
             {
-                JsonSerializer.SerializeAsync<List<AttackSpell>>(fs, attackSpells);
-            }
-        }
-
-        public static void BuffSpellsSerialize(List<Buff> buffSpells)
-        {
-            using (FileStream fs = new FileStream("AllAttackSpells" + ".json", FileMode.OpenOrCreate))
-            {
-                JsonSerializer.SerializeAsync<List<Buff>>(fs, buffSpells);
+                JsonSerializer.SerializeAsync<List<Ability>>(fs, attackSpells);
             }
         }
     }

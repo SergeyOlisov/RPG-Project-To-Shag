@@ -78,7 +78,7 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="1">
                 <Image Source="/data/location/Enemy1.png" Margin="20,0,-20,-40"/>
-                <TextBlock x:Name="text_block_hp_enemy" Background="White" HorizontalAlignment="Left" Margin="55,3,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="148"/>
+                <TextBlock x:Name="text_block_hp_enemy" Background="White" HorizontalAlignment="Left" Margin="72,29,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="125"/>
             </Grid>
         </Grid>
         <Grid Grid.Column="2" Grid.Row="1">
