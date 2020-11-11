@@ -19,15 +19,20 @@ namespace RPG.data.location
 
         public static void SpellCaste(ref Enemy enemy, Ability ability) 
         {
-            if (ability is AttackSpell attack)
+            //if (ability is AttackSpell attack)
+            //{
+            //    enemy.Health -= spell.AttackAbility(ability);
+            //    IsEnemyDead(ref enemy);
+            //}
+            if (ability.Name == "Fire Ball") 
             {
-                enemy.Health -= spell.AttackAbility(ability);
+                enemy.Health -= ability.Value;
                 IsEnemyDead(ref enemy);
             }
-            else 
+            else
             {
                 Player.hero.Health += spell.Buff(ability);
-                if (Player.hero.MaxHealth < Player.hero.Health) 
+                if (Player.hero.MaxHealth < Player.hero.Health)
                 {
                     Player.hero.Health = Player.hero.MaxHealth;
                 }

@@ -13,6 +13,9 @@
     <None Remove="data\location\Hero.png" />
     <None Remove="data\location\Location1.jpg" />
     <None Remove="Exit_x.png" />
+    <None Remove="fireball.png" />
+    <None Remove="frostball.png" />
+    <None Remove="heal.png" />
     <None Remove="load.png" />
     <None Remove="Menu.jpg" />
     <None Remove="minus.png" />
@@ -31,6 +34,9 @@
     <Resource Include="data\location\Hero.png" />
     <Resource Include="data\location\Location1.jpg" />
     <Resource Include="Exit_x.png" />
+    <Resource Include="fireball.png" />
+    <Resource Include="frostball.png" />
+    <Resource Include="heal.png" />
     <Resource Include="load.png" />
     <Resource Include="Menu.jpg" />
     <Resource Include="minus.png" />

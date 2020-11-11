@@ -9,6 +9,7 @@ using Microsoft.Win32;
 using RPG.data.helpers;
 using System.ComponentModel;
 using RPG.data.hero;
+using RPG.data.location;
 
 namespace RPG
 {
@@ -22,12 +23,19 @@ namespace RPG
         TaskCompletionSource<bool> End = new TaskCompletionSource<bool>();
         int mana = 10;
         int tempManaHero = Player.hero.Mana;
+        //Ability _choice = new Ability() 
+        //{
+        //    Name = "Fire Ball",
+        //    ManaCoast = 5,
+        //    Level = 1,
+        //    Value = 8
+        //};
         Enemy enemy = new Enemy()
         {
             Name = "Skelet",
             Level = 1,
             Experience = 20,
-            Health = 15,
+            Health = 1500,
             Mana = 15
         };
         IAbility temp2 = Player.hero;
@@ -73,7 +81,8 @@ namespace RPG
         private void Attack_Click(object sender, RoutedEventArgs e)
         {
             ShowStatistics.Items.Add("");
-            enemy.Health -= Player.hero.Damage();
+            Battle.Attack(ref enemy);
+            //enemy.Health -= Player.hero.Damage();
             ShowStatistics.Items.Add("Hero deals damage: " + Player.hero.Damage());
             ShowStatistics.Items.Add("Enemy Health: " + enemy.Health);
             ShowStatistics.Items.Add("");
@@ -143,8 +152,14 @@ namespace RPG
 
         private void Ability_Click(object sender, RoutedEventArgs e)
         {
-            Player.hero.Mana -= 10;
-            ShowStatistics.Items.Add("Mana " + Player.hero.Mana);
+
+            var ChoiceAbilities = new ChoiceAbilities(this, ref enemy);
+            //Battle.SpellCaste(ref enemy, _choice);
+            //ShowStatistics.Items.Add("Enemy Health: " + enemy.Health);
+            //ShowStatistics.Items.Add("");
+            ChoiceAbilities.Show(); 
+            //ChoiceAbilities.Check += value => label.Content = value;
+
         }
 
         private void StaticHero_Click(object sender, RoutedEventArgs e)

@@ -1,0 +1,38 @@
+[
+  {
+    "Value": 10,
+    "Name": "Fire Ball",
+    "ManaCoast": 5,
+    "Level": 1,
+  },
+  {
+    "Value": 8,
+    "Name": "Frost Ball",
+    "ManaCoast": 4,
+    "Level": 1
+  },
+  {
+    "Value": 15,
+    "Name": "Lightning",
+    "ManaCoast": 8,
+    "Level": 1
+  },
+  {
+    "Value": 10,
+    "Name": "Heal",
+    "ManaCoast": 5,
+    "Level": 1
+  },
+  {
+    "Value": 8,
+    "Name": "Light Heal",
+    "ManaCoast": 4,
+    "Level": 1
+  },
+  {
+    "Value": 15,
+    "Name": "Strong Heal",
+    "ManaCoast": 8,
+    "Level": 1
+  }
+]
