@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using RPG.data.helpers;
 
 namespace RPG
 {
@@ -31,15 +32,16 @@ namespace RPG
         public Hero() 
         {
             Name = "Wanderer";
-            Level = 1; //нужен 1 лвл, 2 для теста
+            Level = 1; 
             Experience = 0;
             Strength = 15;
             Agility = 15;
             Intellect = 15;
             Vitality = 15;
-            StatPoints = 5; // для теста
-            SkillPoints = 1; // для теста
+            Ability.Add(AbilityHelper.GetFirstAbility());
             UpdateHero();
+            Mana = MaxMana;
+            Health = MaxHealth;
         }
         public Hero(string name)
         {
@@ -50,7 +52,10 @@ namespace RPG
             Agility = 15;
             Intellect = 15;
             Vitality = 15;
+            Ability.Add(AbilityHelper.GetFirstAbility());
             UpdateHero();
+            Mana = MaxMana;
+            Health = MaxHealth;
         }
 
         public void LevelUp(int experience)

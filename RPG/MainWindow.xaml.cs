@@ -13,7 +13,6 @@ namespace RPG
     {
         public MainWindow()
         {
-            Player.QuickLoad();
             Editor.EnemySerialize(new Enemy());
             InitializeComponent();
         }

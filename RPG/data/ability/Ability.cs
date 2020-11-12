@@ -49,18 +49,18 @@ namespace RPG
             set
             {
                 _damage = value;
-                OnPropertyChanged("Value");
+                OnPropertyChanged("Damage");
             }
         }
 
         public Ability() { }
 
-        public Ability(string name, int manaCost, int level, int value)
+        public Ability(string name, int manaCost, int level, int damage)
         {
             Name = name;
             ManaCost = manaCost;
             Level = level;
-            Damage = value;
+            Damage = damage;
         }
 
         public int AttackAbility(Ability ability)
