@@ -45,7 +45,8 @@ namespace RPG
                 _chosenAbility.Level = Convert.ToInt32(text_abilityLevel.Text);
                 _chosenAbility.Damage = Convert.ToInt32(text_abilityDamage.Text);
                 Battle.HeroSpellCaste(ref _enemy, _chosenAbility);
-                _location1.text_block_hp_enemy.Text = _enemy.Health.ToString();
+                _location1.HP_Enemy.Text = _enemy.Health.ToString();
+                _location1.Mana_Hero.Text = Player.hero.Mana.ToString();
             }
             catch (Exception exception)
             {

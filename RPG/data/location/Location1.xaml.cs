@@ -13,11 +13,15 @@ namespace RPG
     public partial class Location1 : Window
     {
         Enemy enemy = new Enemy();
+
  
         public Location1()
         {
             InitializeComponent();
-            text_block_hp_enemy.Text = enemy.Health.ToString();
+            HP_Hero.Text = Player.hero.Health.ToString();
+            Mana_Hero.Text = Player.hero.Mana.ToString();
+            HP_Enemy.Text = enemy.Health.ToString();
+            Mana_Enemy.Text = enemy.Mana.ToString();
         }
         private void Exit_x_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -75,7 +79,8 @@ namespace RPG
         private void Attack_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Battle.HeroAttack(ref enemy);
-            text_block_hp_enemy.Text = enemy.Health.ToString();
+            HP_Enemy.Text = enemy.Health.ToString();
+            Mana_Enemy.Text = enemy.Mana.ToString();
         }
 
         private void button_studyAbility_Click(object sender, RoutedEventArgs e)

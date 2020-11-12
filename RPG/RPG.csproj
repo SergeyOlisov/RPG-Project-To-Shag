@@ -12,6 +12,7 @@
     <None Remove="data\location\Enemy1.png" />
     <None Remove="data\location\Hero.png" />
     <None Remove="data\location\HeroStat.png" />
+    <None Remove="data\location\HP Hero.png" />
     <None Remove="data\location\Location1.jpg" />
     <None Remove="data\images\Menu.jpg" />
     <None Remove="data\images\Newgames.png" />
@@ -25,6 +26,7 @@
     <None Remove="data\images\windowstatichero.png" />
     <None Remove="data\images\OK.png" />
     <None Remove="data\images\Plus.png" />
+    <None Remove="data\location\Mana Hero.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +35,7 @@
     <Resource Include="data\location\Enemy1.png" />
     <Resource Include="data\location\Hero.png" />
     <Resource Include="data\location\HeroStat.png" />
+    <Resource Include="data\location\HP Hero.png" />
     <Resource Include="data\location\Location1.jpg" />
     <Resource Include="data\images\Menu.jpg" />
     <Resource Include="data\images\Newgames.png" />
@@ -46,6 +49,7 @@
     <Resource Include="data\images\windowstatichero.png" />
     <Resource Include="data\images\OK.png" />
     <Resource Include="data\images\Plus.png" />
+    <Resource Include="data\location\Mana Hero.png" />
   </ItemGroup>
 
   <ItemGroup>

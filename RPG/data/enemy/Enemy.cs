@@ -47,7 +47,8 @@ namespace RPG
 
         public int Damage() //тестовый урон
         {
-            return Level * 8;
+            var random = new Random();
+            return Level * random.Next(10,20);
         }
 
         public int Dead()
