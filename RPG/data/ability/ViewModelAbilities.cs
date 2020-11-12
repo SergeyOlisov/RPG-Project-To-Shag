@@ -16,6 +16,7 @@ namespace RPG.data.ability
         public event PropertyChangedEventHandler PropertyChanged;
 
         private List<Ability> _abilities = Player.hero.Ability;
+        
         public Ability SelectedAbility
         {
             get { return _selectedAbility; }
@@ -37,6 +38,19 @@ namespace RPG.data.ability
             Abilities = new ObservableCollection<Ability>();
             foreach (var ability in _abilities)
             {
+                Abilities.Add(ability);
+            }
+        }
+
+        public ViewModelAbilities(List<Ability> abilities)
+        {
+            Abilities = new ObservableCollection<Ability>();
+            foreach (var ability in abilities)
+            {
+                if (Player.hero.Ability.Contains(ability))
+                {
+                    continue;
+                }
                 Abilities.Add(ability);
             }
         }

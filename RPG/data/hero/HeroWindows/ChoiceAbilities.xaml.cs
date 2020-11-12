@@ -54,5 +54,10 @@ namespace RPG
             }
             Close();
         }
+
+        private void button_closeAbility_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -6,6 +6,7 @@ using RPG.data.hero;
 using System.Windows.Media;
 using System.IO;
 using RPG.data.location;
+using RPG.data.hero.HeroWindows;
 
 namespace RPG
 {
@@ -75,6 +76,12 @@ namespace RPG
         {
             Battle.HeroAttack(ref enemy);
             text_block_hp_enemy.Text = enemy.Health.ToString();
+        }
+
+        private void button_studyAbility_Click(object sender, RoutedEventArgs e)
+        {
+            var StudyAbilities = new StudyAbilities(this);
+            StudyAbilities.Show();
         }
     }
 }

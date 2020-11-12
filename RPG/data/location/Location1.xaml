@@ -155,6 +155,7 @@
                     </Image.Effect>
                 </Image>
             </Grid>
+            <Button x:Name="button_studyAbility" Content="Изучить способность" HorizontalAlignment="Center" Margin="0,33,0,0" Grid.Row="6" VerticalAlignment="Top" Height="41" Width="147" Click="button_studyAbility_Click"/>
         </Grid>
     </Grid>
 </Window>

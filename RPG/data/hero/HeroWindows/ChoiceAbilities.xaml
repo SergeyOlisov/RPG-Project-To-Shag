@@ -47,22 +47,23 @@
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Row="0" DataContext="{Binding SelectedAbility}">
-                <TextBlock FontSize="16" Text="Характеристики способности"/>
-                <TextBlock Text="Наименование"/>
+                <TextBlock FontSize="16" Text="Характеристики способности" HorizontalAlignment="Center"/>
+                <TextBlock Text="Наименование" HorizontalAlignment="Center"/>
                 <TextBlock x:Name="text_abilityName" Text="{Binding Name}" FontSize="25" HorizontalAlignment="Center"/>
-                <TextBlock Text="Затраты маны"/>
+                <TextBlock Text="Затраты маны" HorizontalAlignment="Center"/>
                 <TextBlock x:Name="text_abilityMana" Text="{Binding ManaCost}" FontSize="25" HorizontalAlignment="Center"/>
-                <TextBlock Text="Требуемый уровень"/>
+                <TextBlock Text="Требуемый уровень" HorizontalAlignment="Center"/>
                 <TextBlock x:Name="text_abilityLevel" Text="{Binding Level}" FontSize="25" HorizontalAlignment="Center"/>
-                <TextBlock Text="Урон/хил"/>
+                <TextBlock Text="Урон" HorizontalAlignment="Center"/>
                 <TextBlock x:Name="text_abilityDamage" Text="{Binding Damage}" FontSize="25" HorizontalAlignment="Center"/>
             </StackPanel>
 
             <GridSplitter Grid.Row="1" Height="1"/>
 
-            <Border Grid.Row="2" CornerRadius="3" Padding="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button x:Name="button_applyAbility" Content="Применить" FontSize="20" Height="34" Width="149" Click="button_applyAbility_Click"/>
-            </Border>
+            <Grid Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button x:Name="button_applyAbility" Content="Применить" FontSize="20" Height="34" Width="149" Click="button_applyAbility_Click" Margin="0,0,193,0"/>
+                <Button x:Name="button_closeAbility" Content="Закрыть" FontSize="20" Height="34" Width="149" Click="button_closeAbility_Click" Margin="193,0,0,0"/>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
