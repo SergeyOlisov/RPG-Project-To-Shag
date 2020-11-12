@@ -2,19 +2,19 @@
   {
     "BuffValue": 10,
     "Name": "Heal",
-    "ManaCoast": 5,
+    "ManaCost": 5,
     "Level": 1
   },
   {
     "BuffValue": 8,
     "Name": "Light Heal",
-    "ManaCoast": 4,
+    "ManaCost": 4,
     "Level": 1
   },
   {
     "BuffValue": 15,
     "Name": "Strong Heal",
-    "ManaCoast": 8,
+    "ManaCost": 8,
     "Level": 1
   }
 ]

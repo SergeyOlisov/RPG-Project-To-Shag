@@ -67,7 +67,8 @@ namespace RPG
 
         private void Ability_Hero_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            var ChoiceAbilities = new ChoiceAbilities(this, ref enemy);
+            ChoiceAbilities.Show();
         }
 
         private void Attack_MouseDown(object sender, MouseButtonEventArgs e)
