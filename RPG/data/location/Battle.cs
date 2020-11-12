@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using RPG.data.hero;
 
 namespace RPG.data.location
@@ -28,6 +30,19 @@ namespace RPG.data.location
             }
         }
 
+        public static void EnemyAttack(ref Enemy enemy)
+        {
+            var random = new Random();
+            if (random.Next(0, 100) > Player.hero.Dodge())
+            {
+                Player.hero.Health -= enemy.Damage();
+            }
+            else
+            {
+                MessageBox.Show("Hero dodge, bitch!");
+            }
+        }
+        
         private static void EndBattle() 
         {
             Player.QuickSave(Player.hero);

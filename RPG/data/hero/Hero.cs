@@ -134,6 +134,11 @@ namespace RPG
             }
         }
 
+        public int Dodge()
+        {
+            return Agility / 5;
+        }
+
         public void UpdateHero()
         {
             MaxHealth = Vitality * 5;
