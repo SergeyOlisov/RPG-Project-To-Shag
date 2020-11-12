@@ -31,7 +31,7 @@ namespace RPG
         public Hero() 
         {
             Name = "Wanderer";
-            Level = 2; //нужен 1 лвл, 2 для теста
+            Level = 1; //нужен 1 лвл, 2 для теста
             Experience = 0;
             Strength = 15;
             Agility = 15;
@@ -71,7 +71,7 @@ namespace RPG
         
         public int Damage()
         {
-            return Strength * 5;
+            return Strength;
         }
 
         public void StrengthUp()

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 using RPG.data.helpers;
+using RPG.data.hero;
 
 namespace RPG.data.ability
 {
@@ -14,7 +15,7 @@ namespace RPG.data.ability
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private List<Ability> _abilities = AbilityHelper.GetAttackSpells();
+        private List<Ability> _abilities = Player.hero.Ability;
         public Ability SelectedAbility
         {
             get { return _selectedAbility; }
