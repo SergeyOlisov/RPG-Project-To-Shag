@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using RPG.data.helpers;
@@ -47,7 +48,7 @@ namespace RPG.data.ability
             Abilities = new ObservableCollection<Ability>();
             foreach (var ability in abilities)
             {
-                if (Player.hero.Ability.Contains(ability))
+                if (Player.hero.Ability.Find(abil => abil.Name == ability.Name) != null)
                 {
                     continue;
                 }

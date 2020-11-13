@@ -13,8 +13,6 @@ namespace RPG
     public partial class Location1 : Window
     {
         Enemy enemy = new Enemy();
-
- 
         public Location1()
         {
             InitializeComponent();
