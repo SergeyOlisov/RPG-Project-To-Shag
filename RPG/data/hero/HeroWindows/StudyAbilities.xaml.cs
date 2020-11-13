@@ -36,12 +36,22 @@ namespace RPG.data.hero.HeroWindows
         {
             try
             {
-                _chosenAbility.Name = text_abilityName.Text.ToString();
+                _chosenAbility.Name = text_abilityName.Text;
                 _chosenAbility.ManaCost = Convert.ToInt32(text_abilityMana.Text);
                 _chosenAbility.Level = Convert.ToInt32(text_abilityLevel.Text);
                 _chosenAbility.Damage = Convert.ToInt32(text_abilityDamage.Text);
+                if (Player.hero.SkillPoints == 0)
+                {
+                    MessageBox.Show("Недостаточно очков учений");
+                    return;
+                }
                 Player.hero.StudyAbility(_chosenAbility);
                 text_skillPoints.Text = Player.hero.SkillPoints.ToString();
+                if (Player.hero.Level < Convert.ToInt32(text_abilityLevel.Text))
+                {
+                    MessageBox.Show("Недостаточно высокий уровень персонажа");
+                }
+                Close();
             }
             catch (Exception exception)
             {

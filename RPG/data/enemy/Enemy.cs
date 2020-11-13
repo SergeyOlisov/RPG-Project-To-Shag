@@ -26,11 +26,11 @@ namespace RPG
             Experience = 100;
         }
 
-        public Enemy(string name, Hero hero) // для тестирования
+        public Enemy(Hero hero) // для тестирования
         {
-            Name = name;
+            Name = "Рабочее название";
             Level = hero.Level;
-            Experience = Level * 100;
+            Experience = Level * 75 + 25;
             Health = Level * 150;
             Mana = Level * 10;
         }

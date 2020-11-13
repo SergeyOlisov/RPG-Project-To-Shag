@@ -47,6 +47,7 @@ namespace RPG
                 Battle.HeroSpellCaste(ref _enemy, _chosenAbility);
                 _location1.HP_Enemy.Text = _enemy.Health.ToString();
                 _location1.Mana_Hero.Text = Player.hero.Mana.ToString();
+                _location1.isSpellCast = true;
             }
             catch (Exception exception)
             {

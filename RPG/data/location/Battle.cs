@@ -21,15 +21,7 @@ namespace RPG.data.location
             enemy.Health -= ability.AttackAbility(ability);
             IsEnemyDead(ref enemy);
         }
-
-        private static void IsEnemyDead(ref Enemy enemy) 
-        {
-            if (enemy.Health <= 0)
-            {
-                Player.hero.LevelUp(enemy.Dead());
-            }
-        }
-
+        
         public static void EnemyAttack(ref Enemy enemy)
         {
             var random = new Random();
@@ -42,7 +34,15 @@ namespace RPG.data.location
                 MessageBox.Show("Hero dodge, bitch!");
             }
         }
-        
+
+        private static void IsEnemyDead(ref Enemy enemy) 
+        {
+            if (enemy.Health <= 0)
+            {
+                Player.hero.LevelUp(enemy.Dead());
+            }
+        }
+
         private static void EndBattle() 
         {
             Player.QuickSave(Player.hero);

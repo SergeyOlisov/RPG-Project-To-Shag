@@ -12,7 +12,10 @@ namespace RPG
 {
     public partial class Location1 : Window
     {
-        Enemy enemy = new Enemy();
+        Enemy enemy = new Enemy(Player.hero);
+        public bool isSpellCast = false;
+        private bool _isAttack = false;
+        //private bool _isPotionUsed = false;
         public Location1()
         {
             InitializeComponent();
@@ -70,15 +73,31 @@ namespace RPG
 
         private void Ability_Hero_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            if (isSpellCast)
+            {
+                MessageBox.Show("Нельзя повторно применить заклинание");
+                return;
+            }
             var ChoiceAbilities = new ChoiceAbilities(this, ref enemy);
             ChoiceAbilities.Show();
         }
 
         private void Attack_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            if (_isAttack)
+            {
+                MessageBox.Show("Нельзя повторно атаковать");
+                return;
+            }
             Battle.HeroAttack(ref enemy);
+            _isAttack = true;
             HP_Enemy.Text = enemy.Health.ToString();
             Mana_Enemy.Text = enemy.Mana.ToString();
+            if (enemy.Health > 0)
+            {
+                Battle.EnemyAttack(ref enemy);
+                HP_Hero.Text = Player.hero.Health.ToString();
+            }
         }
 
         private void button_studyAbility_Click(object sender, RoutedEventArgs e)
