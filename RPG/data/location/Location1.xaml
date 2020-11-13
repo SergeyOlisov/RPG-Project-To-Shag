@@ -98,7 +98,7 @@
                         <Image Source="/data/location/Mana Hero.png" Margin="-70"/>
                     </Grid>
                     <Grid Grid.Column="3">
-                        <TextBlock x:Name="Mana_Enemy" Text="" Foreground="Aqua" FontSize="25" Margin="10,5,0,0"/> 
+                        <TextBlock x:Name="Mana_Enemy" Text="" Foreground="Aqua" FontSize="25" Margin="10,5,0,0"/>
                     </Grid>
                 </Grid>
             </Grid>
@@ -201,6 +201,7 @@
                 </Image>
             </Grid>
             <Button x:Name="button_studyAbility" Content="Изучить способность" HorizontalAlignment="Center" Margin="0,33,0,0" Grid.Row="6" VerticalAlignment="Top" Height="41" Width="147" Click="button_studyAbility_Click"/>
+            <Button x:Name="button_endTurn" Content="Завершить ход" HorizontalAlignment="Center" Margin="0,105,0,0" Grid.Row="6" VerticalAlignment="Top" Height="38" Width="147" Click="button_endTurn_Click"/>
         </Grid>
     </Grid>
 </Window>

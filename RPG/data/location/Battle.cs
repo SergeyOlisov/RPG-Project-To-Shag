@@ -39,13 +39,10 @@ namespace RPG.data.location
         {
             if (enemy.Health <= 0)
             {
+                MessageBox.Show("Враг повержен!");
                 Player.hero.LevelUp(enemy.Dead());
+                Player.QuickSave(Player.hero);
             }
-        }
-
-        private static void EndBattle() 
-        {
-            Player.QuickSave(Player.hero);
         }
     }
 }

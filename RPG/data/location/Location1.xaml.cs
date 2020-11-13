@@ -24,6 +24,13 @@ namespace RPG
             HP_Enemy.Text = enemy.Health.ToString();
             Mana_Enemy.Text = enemy.Mana.ToString();
         }
+        public void EndFight() 
+        {
+            if (enemy.Health <= 0)
+            {
+                Close();
+            }
+        }
         private void Exit_x_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             Close();
@@ -91,19 +98,23 @@ namespace RPG
             }
             Battle.HeroAttack(ref enemy);
             _isAttack = true;
+            EndFight();
             HP_Enemy.Text = enemy.Health.ToString();
             Mana_Enemy.Text = enemy.Mana.ToString();
-            if (enemy.Health > 0)
-            {
-                Battle.EnemyAttack(ref enemy);
-                HP_Hero.Text = Player.hero.Health.ToString();
-            }
         }
 
         private void button_studyAbility_Click(object sender, RoutedEventArgs e)
         {
             var StudyAbilities = new StudyAbilities(this);
             StudyAbilities.Show();
+        }
+
+        private void button_endTurn_Click(object sender, RoutedEventArgs e)
+        {
+            isSpellCast = false;
+            _isAttack = false;
+            Battle.EnemyAttack(ref enemy);
+            HP_Hero.Text = Player.hero.Health.ToString();
         }
     }
 }
