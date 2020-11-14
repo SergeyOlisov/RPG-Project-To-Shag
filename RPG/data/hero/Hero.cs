@@ -66,11 +66,11 @@ namespace RPG
                 Experience = 0;
                 Level++;
                 SkillPoints += 1;
-                StatPoints += 5;
-                LevelUp(experience);
+                StatPoints += 10;
                 UpdateHero();
+                LevelUp(experience);
             }
-
+            
             Experience += experience;
         }
         
