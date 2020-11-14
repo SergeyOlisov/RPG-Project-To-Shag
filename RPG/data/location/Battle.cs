@@ -27,7 +27,7 @@ namespace RPG.data.location
             var random = new Random();
             if (random.Next(0, 100) > Player.hero.Dodge())
             {
-                Player.hero.Health -= 80;/* enemy.Damage();*/
+                Player.hero.Health -= enemy.Damage();
                 IsHeroDead();
             }
             else
