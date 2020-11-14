@@ -19,6 +19,7 @@
     <None Remove="data\location\Enemy1.png" />
     <None Remove="data\location\Exit_to_Menu.jpg" />
     <None Remove="data\location\Exit_to_Menu.png" />
+    <None Remove="data\location\HealthPotion.png" />
     <None Remove="data\location\Hero.png" />
     <None Remove="data\location\HeroStat.png" />
     <None Remove="data\location\HP Hero.png" />
@@ -36,6 +37,7 @@
     <None Remove="data\images\OK.png" />
     <None Remove="data\images\Plus.png" />
     <None Remove="data\location\Mana Hero.png" />
+    <None Remove="data\location\ManaPotion.png" />
     <None Remove="data\location\StartNextFight.jpg" />
     <None Remove="data\location\StartNextFight.png" />
     <None Remove="data\location\StudyAbility.jpg" />
@@ -52,6 +54,7 @@
     <Resource Include="data\location\EndTurn.png" />
     <Resource Include="data\location\Enemy1.png" />
     <Resource Include="data\location\Exit_to_Menu.png" />
+    <Resource Include="data\location\HealthPotion.png" />
     <Resource Include="data\location\Hero.png" />
     <Resource Include="data\location\HeroStat.png" />
     <Resource Include="data\location\HP Hero.png" />
@@ -69,6 +72,7 @@
     <Resource Include="data\images\OK.png" />
     <Resource Include="data\images\Plus.png" />
     <Resource Include="data\location\Mana Hero.png" />
+    <Resource Include="data\location\ManaPotion.png" />
     <Resource Include="data\location\StartNextFight.png" />
     <Resource Include="data\location\StudyAbility.png" />
   </ItemGroup>

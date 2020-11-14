@@ -31,7 +31,7 @@ namespace RPG
             Name = "Рабочее название";
             Level = hero.Level;
             Experience = Level * 75 + 25;
-            Health = Level * 150;
+            Health = Level * 125;
             Mana = Level * 10;
         }
 
@@ -48,7 +48,7 @@ namespace RPG
         public int Damage() //тестовый урон
         {
             var random = new Random();
-            return Level * random.Next(10,20);
+            return Level * random.Next(8,15);
         }
 
         public int Dead()

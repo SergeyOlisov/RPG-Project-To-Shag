@@ -65,9 +65,9 @@ namespace RPG
 
         public int AttackAbility(Ability ability)
         {
-            if (Player.hero.Mana >= ability.ManaCost)
+            if (Player.Hero.Mana >= ability.ManaCost)
             {
-                Player.hero.Mana -= ability.ManaCost;
+                Player.Hero.Mana -= ability.ManaCost;
                 return ability.Damage;
             }
 

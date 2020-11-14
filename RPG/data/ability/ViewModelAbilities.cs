@@ -16,7 +16,7 @@ namespace RPG.data.ability
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private List<Ability> _abilities = Player.hero.Ability;
+        private List<Ability> _abilities = Player.Hero.Ability;
         
         public Ability SelectedAbility
         {
@@ -48,7 +48,7 @@ namespace RPG.data.ability
             Abilities = new ObservableCollection<Ability>();
             foreach (var ability in abilities)
             {
-                if (Player.hero.Ability.Find(abil => abil.Name == ability.Name) != null)
+                if (Player.Hero.Ability.Find(abil => abil.Name == ability.Name) != null)
                 {
                     continue;
                 }

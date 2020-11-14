@@ -16,12 +16,40 @@ namespace RPG.data.hero
 {
     public static class Player
     {
-        private const string tempHeroPath = ObjectHelper.TempHero;
-        public static Hero hero;
+        private const string _tempHeroPath = ObjectHelper.TempHero;
+        public static Hero Hero;
+        public static int HealthPotions = 2;
+        public static int ManaPotions = 2;
+
+        public static void UseHealthPotion()
+        {
+            if (HealthPotions > 0)
+            {
+                Hero.Health += Hero.MaxHealth * 30 / 100;
+                if (Hero.Health > Hero.MaxHealth)
+                {
+                    Hero.Health = Hero.MaxHealth;
+                }
+                HealthPotions -= 1;
+            }
+        }
+
+        public static void UseManaPotion()
+        {
+            if (ManaPotions > 0)
+            {
+                Hero.Mana += Hero.MaxMana * 30 / 100;
+                if (Hero.Mana > Hero.MaxMana)
+                {
+                    Hero.Mana = Hero.MaxMana;
+                }
+                ManaPotions -= 1;
+            }
+        }
 
         public static Hero CreatePlayer()
         {
-            return hero = Editor.HeroCreate();
+            return Hero = Editor.HeroCreate();
         }
         public static Hero LoadingPlayer()
         {
@@ -29,13 +57,13 @@ namespace RPG.data.hero
             openFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
-                hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
-                if(hero == null)
+                Hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
+                if(Hero == null)
                 {
-                    return hero = Editor.HeroCreate();
+                    return Hero = Editor.HeroCreate();
                 }
             }
-            return hero = Editor.HeroCreate();
+            return Hero = Editor.HeroCreate();
         }
 
         public static void HeroSave()
@@ -43,18 +71,18 @@ namespace RPG.data.hero
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
             if (saveFileDialog.ShowDialog() == true)
-                Editor.HeroSerialize(hero, saveFileDialog.FileName);
+                Editor.HeroSerialize(Hero, saveFileDialog.FileName);
         }
 
         public static Hero QuickLoad()
         {
-            hero = Editor.HeroDeserialize(tempHeroPath);
-            return hero;
+            Hero = Editor.HeroDeserialize(_tempHeroPath);
+            return Hero;
         }
 
         public static void QuickSave(Hero playerHero)
         {
-            Editor.HeroSerialize(playerHero, tempHeroPath);
+            Editor.HeroSerialize(playerHero, _tempHeroPath);
         }
     }
 }

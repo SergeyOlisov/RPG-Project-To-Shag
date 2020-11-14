@@ -47,7 +47,7 @@ namespace RPG
         }
         private void NewGames_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if(Player.hero == null)
+            if(Player.Hero == null)
             {
                 Player.CreatePlayer();
             }
@@ -62,7 +62,7 @@ namespace RPG
             openFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
-                Player.hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
+                Player.Hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
             }
             else
             {

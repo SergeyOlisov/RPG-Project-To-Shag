@@ -39,8 +39,8 @@ namespace RPG.data.location
 
         private void Start_Next_Fight_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Player.hero.Health = Player.hero.MaxHealth;
-            Player.hero.Mana = Player.hero.MaxMana;
+            Player.Hero.Health = Player.Hero.MaxHealth;
+            Player.Hero.Mana = Player.Hero.MaxMana;
             var Location1 = new Location1();
             Location1.Show();
             Close();

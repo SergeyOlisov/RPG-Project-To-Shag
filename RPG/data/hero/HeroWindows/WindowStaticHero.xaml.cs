@@ -18,7 +18,7 @@ namespace RPG
     /// </summary>
     public partial class WindowStaticHero : Window
     {
-        Hero hero = Player.hero;
+        Hero hero = Player.Hero;
         int strenght;
         int agility;
         int intellect;
@@ -161,7 +161,7 @@ namespace RPG
             {
                 hero.AgilityUp();
             }
-            Player.hero = hero;
+            Player.Hero = hero;
             Close();
         }
 

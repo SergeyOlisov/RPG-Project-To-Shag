@@ -19,7 +19,7 @@ namespace RPG.data.helpers
 
         public static Ability GetFirstAbility()
         {
-            return new Ability("Fire Ball", 10,1,25);
+            return new Ability("Fire Ball", 12,1,5);
         }
     }
 }

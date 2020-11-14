@@ -35,7 +35,7 @@ namespace RPG
         {
             try
             {
-                if (Player.hero.Mana < Convert.ToInt32(text_abilityMana.Text))
+                if (Player.Hero.Mana < Convert.ToInt32(text_abilityMana.Text))
                 {
                     MessageBox.Show("Need more mana, bitch");
                     return;
@@ -47,7 +47,7 @@ namespace RPG
                 Battle.HeroSpellCaste(ref _enemy, _chosenAbility);
                 _location1.EndFight();
                 _location1.HP_Enemy.Text = _enemy.Health.ToString();
-                _location1.Mana_Hero.Text = Player.hero.Mana.ToString();
+                _location1.Mana_Hero.Text = Player.Hero.Mana.ToString();
                 _location1.isSpellCast = true;
             }
             catch (Exception exception)
