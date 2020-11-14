@@ -42,6 +42,8 @@ namespace RPG.data.location
             {
                 MessageBox.Show("Враг повержен!", "ПОБЕДА", MessageBoxButton.OK, MessageBoxImage.Warning);
                 Player.Hero.LevelUp(enemy.Dead());
+                Player.HanaPotions += 2;
+                Player.HealthPotions += 2;
                 Player.QuickSave(Player.Hero);
             }
         }
