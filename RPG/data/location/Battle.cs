@@ -12,22 +12,22 @@ namespace RPG.data.location
     {
         public static void HeroAttack(ref Enemy enemy)
         {
-            enemy.Health -= Player.hero.Damage();
+            enemy.Health -= Player.Hero.Damage();
             IsEnemyDead(ref enemy);
         }
 
-        public static void HeroSpellCaste(ref Enemy enemy, Ability ability) 
+        public static void HeroSpellCaste(ref Enemy enemy, Ability ability)
         {
-            enemy.Health -= ability.AttackAbility(ability);
+            enemy.Health -= ability.AttackAbility(ability) * Player.Hero.Intellect * 30 / 100;
             IsEnemyDead(ref enemy);
         }
         
         public static void EnemyAttack(ref Enemy enemy)
         {
             var random = new Random();
-            if (random.Next(0, 100) > Player.hero.Dodge())
+            if (random.Next(0, 100) > Player.Hero.Dodge())
             {
-                Player.hero.Health -= 80;/* enemy.Damage();*/
+                Player.Hero.Health -= enemy.Damage();
                 IsHeroDead();
             }
             else
@@ -41,13 +41,13 @@ namespace RPG.data.location
             if (enemy.Health <= 0)
             {
                 MessageBox.Show("Враг повержен!", "ПОБЕДА", MessageBoxButton.OK, MessageBoxImage.Warning);
-                Player.hero.LevelUp(enemy.Dead());
-                Player.QuickSave(Player.hero);
+                Player.Hero.LevelUp(enemy.Dead());
+                Player.QuickSave(Player.Hero);
             }
         }
         private static void IsHeroDead()
         {
-            if (Player.hero.Health <= 0)
+            if (Player.Hero.Health <= 0)
             {
                 MessageBox.Show("Вы погибли!", "Поражение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
