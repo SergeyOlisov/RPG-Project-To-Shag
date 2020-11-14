@@ -26,7 +26,7 @@ namespace RPG
         }
         public void EndFight() 
         {
-            if (enemy.Health <= 0)
+            if (enemy.Health <= 0 || Player.hero.Health <=0)
             {
                 var Briefing = new Briefing();
                 Briefing.Show();
@@ -105,6 +105,7 @@ namespace RPG
             _isAttack = false;
             Battle.EnemyAttack(ref enemy);
             HP_Hero.Text = Player.hero.Health.ToString();
+            EndFight();
         }
     }
 }

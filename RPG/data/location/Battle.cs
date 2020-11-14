@@ -12,7 +12,7 @@ namespace RPG.data.location
     {
         public static void HeroAttack(ref Enemy enemy)
         {
-            enemy.Health -= 150; /*Player.hero.Damage();*/
+            enemy.Health -= Player.hero.Damage();
             IsEnemyDead(ref enemy);
         }
 
@@ -27,7 +27,8 @@ namespace RPG.data.location
             var random = new Random();
             if (random.Next(0, 100) > Player.hero.Dodge())
             {
-                Player.hero.Health -= enemy.Damage();
+                Player.hero.Health -= 80;/* enemy.Damage();*/
+                IsHeroDead();
             }
             else
             {
@@ -42,6 +43,13 @@ namespace RPG.data.location
                 MessageBox.Show("Враг повержен!", "ПОБЕДА", MessageBoxButton.OK, MessageBoxImage.Warning);
                 Player.hero.LevelUp(enemy.Dead());
                 Player.QuickSave(Player.hero);
+            }
+        }
+        private static void IsHeroDead()
+        {
+            if (Player.hero.Health <= 0)
+            {
+                MessageBox.Show("Вы погибли!", "Поражение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
     }
