@@ -31,8 +31,15 @@ namespace RPG.data.hero.HeroWindows
             DataContext = new ViewModelAbilities(_allAbilities);
             text_skillPoints.Text = Player.Hero.SkillPoints.ToString();
         }
-
-        private void button_studyAbil_Click(object sender, RoutedEventArgs e)
+        private void button_closeAbil_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+        private void Close_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Close();
+        }
+        private void Study_MouseDown(object sender, MouseButtonEventArgs e)
         {
             try
             {
@@ -58,11 +65,6 @@ namespace RPG.data.hero.HeroWindows
                 //в лог закинем эксепшн
                 Close();
             }
-        }
-
-        private void button_closeAbil_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }
