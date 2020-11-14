@@ -50,6 +50,7 @@ namespace RPG.data.location
         {
             var MainWindow = new MainWindow();
             MainWindow.Show();
+            Player.Hero = null;
             Close();
         }
     }
