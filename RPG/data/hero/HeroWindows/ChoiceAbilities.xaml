@@ -24,7 +24,7 @@
         </Grid.ColumnDefinitions>
         <ListBox Grid.Column="0" 
                  ItemsSource="{Binding Abilities}" 
-                 SelectedItem="{Binding SelectedAbility}" Background="Transparent" Margin="80,60,0,0">
+                 SelectedItem="{Binding SelectedAbility}" Background="Transparent" Margin="80,60,20,80">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="3">
