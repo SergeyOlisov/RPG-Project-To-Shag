@@ -28,6 +28,8 @@ namespace RPG
         {
             if (enemy.Health <= 0)
             {
+                var Briefing = new Briefing();
+                Briefing.Show();
                 Close();
             }
         }
@@ -72,17 +74,11 @@ namespace RPG
             }
         }
 
-        private void Ex_Hero_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            var WindowsStaticHero = new WindowStaticHero();
-            WindowsStaticHero.Show();
-        }
-
         private void Ability_Hero_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (isSpellCast)
             {
-                MessageBox.Show("Нельзя повторно применить заклинание");
+                MessageBox.Show("Нельзя повторно применить заклинание", "Achtung!", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             var ChoiceAbilities = new ChoiceAbilities(this, ref enemy);
@@ -93,7 +89,7 @@ namespace RPG
         {
             if (_isAttack)
             {
-                MessageBox.Show("Нельзя повторно атаковать");
+                MessageBox.Show("Нельзя повторно атаковать", "Achtung!", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
             Battle.HeroAttack(ref enemy);
@@ -103,13 +99,7 @@ namespace RPG
             Mana_Enemy.Text = enemy.Mana.ToString();
         }
 
-        private void button_studyAbility_Click(object sender, RoutedEventArgs e)
-        {
-            var StudyAbilities = new StudyAbilities(this);
-            StudyAbilities.Show();
-        }
-
-        private void button_endTurn_Click(object sender, RoutedEventArgs e)
+        private void EndTurn_MouseDown(object sender, MouseButtonEventArgs e)
         {
             isSpellCast = false;
             _isAttack = false;

@@ -1,1 +1,1 @@
-{"Name":"Wanderer","Level":2,"Experience":20,"ExperienceToNextLevel":200,"Health":75,"Mana":75,"Strength":15,"Agility":15,"Intellect":15,"Vitality":15,"Ability":[]}
+{"Name":"Wanderer","Level":2,"Experience":175,"ExperienceToNextLevel":200,"SkillPoints":1,"StatPoints":5,"Health":53,"MaxHealth":75,"Mana":75,"MaxMana":75,"Strength":15,"Agility":15,"Intellect":15,"Vitality":15,"Ability":[{"Name":"Fire Ball","ManaCost":10,"Level":1,"Damage":25}]}

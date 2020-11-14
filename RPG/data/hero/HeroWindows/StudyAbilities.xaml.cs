@@ -21,13 +21,13 @@ namespace RPG.data.hero.HeroWindows
     /// </summary>
     public partial class StudyAbilities : Window
     {
-        private readonly Location1 _location1;  
+        private readonly Briefing _briefing;  
         private Ability _chosenAbility = new Ability();
         private List<Ability> _allAbilities = AbilityHelper.GetAttackSpells();
-        public StudyAbilities(Location1 location1)
+        public StudyAbilities(Briefing briefing)
         {
             InitializeComponent();
-            _location1 = location1;
+            _briefing = briefing;
             DataContext = new ViewModelAbilities(_allAbilities);
             text_skillPoints.Text = Player.hero.SkillPoints.ToString();
         }

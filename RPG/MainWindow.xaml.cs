@@ -72,11 +72,15 @@ namespace RPG
         }
         private void Setting_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            var Settings = new Settings();
+            Settings.Show();
+            Close();
         }
         private void Authors_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            var Authors = new Authors();
+            Authors.Show();
+            Close();
         }
     }
 }
