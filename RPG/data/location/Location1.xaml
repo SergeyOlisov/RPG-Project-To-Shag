@@ -138,11 +138,15 @@
         </Grid>
         <Grid Grid.Column="3" Grid.Row="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="200"/>
+                <RowDefinition Height="180"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="20"/>
                 <RowDefinition Height="50"/>
-                <RowDefinition Height="150"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="10"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
@@ -182,7 +186,63 @@
                     </Image.Effect>
                 </Image>
             </Grid>
+
             <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Image x:Name="UseHealthPotion" Source="/data/location/HealthPotion.png" MouseDown="UseHealthPotion_MouseDown">
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="/data/location/HealthPotion.png"/>
+                                <Setter Property="Opacity" Value="0.6"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Opacity" Value="1" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                        <Image.Effect>
+                            <BlurEffect Radius="1"/>
+                        </Image.Effect>
+                    </Image>
+                </Grid>
+                
+                <TextBlock Grid.Column="1" x:Name="Count_Health_Potion" Text="" Foreground="LawnGreen" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto"/>
+            </Grid>
+
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Image x:Name="UseManaPotion" Source="/data/location/ManaPotion.png" MouseDown="UseManaPotion_MouseDown">
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="/data/location/ManaPotion.png"/>
+                                <Setter Property="Opacity" Value="0.6"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Opacity" Value="1" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                        <Image.Effect>
+                            <BlurEffect Radius="1"/>
+                        </Image.Effect>
+                    </Image>
+                </Grid>
+                <TextBlock Grid.Column="1" x:Name="Count_Mana_Potion" Text="" Foreground="Aqua" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto"/>
+            </Grid>
+
+            <Grid Grid.Row="9">
                 <Image x:Name="EndTurn" Source="/data/location/EndTurn.png" MouseDown="EndTurn_MouseDown">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">

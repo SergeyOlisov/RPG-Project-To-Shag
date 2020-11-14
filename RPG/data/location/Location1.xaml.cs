@@ -23,6 +23,8 @@ namespace RPG
             Mana_Hero.Text = Player.Hero.Mana.ToString();
             HP_Enemy.Text = enemy.Health.ToString();
             Mana_Enemy.Text = enemy.Mana.ToString();
+            Count_Health_Potion.Text = Player.HealthPotions.ToString();
+            Count_Mana_Potion.Text = Player.ManaPotions.ToString();
         }
         public void EndFight() 
         {
@@ -106,6 +108,19 @@ namespace RPG
             Battle.EnemyAttack(ref enemy);
             HP_Hero.Text = Player.Hero.Health.ToString();
             EndFight();
+        }
+       
+        private void UseHealthPotion_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Player.UseHealthPotion();
+            Count_Health_Potion.Text = Player.HealthPotions.ToString();
+            HP_Hero.Text = Player.Hero.Health.ToString();
+        }
+        private void UseManaPotion_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Player.UseManaPotion();
+            Count_Mana_Potion.Text = Player.ManaPotions.ToString();
+            Mana_Hero.Text = Player.Hero.Mana.ToString();
         }
     }
 }

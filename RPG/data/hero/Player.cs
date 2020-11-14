@@ -19,7 +19,7 @@ namespace RPG.data.hero
         private const string _tempHeroPath = ObjectHelper.TempHero;
         public static Hero Hero;
         public static int HealthPotions = 2;
-        public static int HanaPotions = 2;
+        public static int ManaPotions = 2;
 
         public static void UseHealthPotion()
         {
@@ -36,14 +36,14 @@ namespace RPG.data.hero
 
         public static void UseManaPotion()
         {
-            if (HanaPotions > 0)
+            if (ManaPotions > 0)
             {
                 Hero.Mana += Hero.MaxMana * 30 / 100;
                 if (Hero.Mana > Hero.MaxMana)
                 {
                     Hero.Mana = Hero.MaxMana;
                 }
-                HanaPotions -= 1;
+                ManaPotions -= 1;
             }
         }
 
