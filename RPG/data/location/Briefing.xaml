@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:RPG.data.location"
         mc:Ignorable="d"
         Title="Briefing" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="/data/location/Briefing.jpg"/>
+    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.8*"/>
@@ -51,9 +54,11 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="0.6*"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="1" Text="Бой завершён!" HorizontalAlignment="Center" Margin="0,35,0,0" FontSize="35" Foreground="Red" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="Auto"/>
+            <Grid Grid.Column="1">
+                <Image Source="/data/location/FinishBattle.png" Margin="0,40,0,0"/>
+            </Grid>
 
-            <Image Grid.Row="5" x:Name="Start_Next_Fight" Source="/data/location/StartNextFight.png" MouseDown="Start_Next_Fight_MouseDown">
+            <Image Grid.Row="5" x:Name="Start_Next_Fight" Source="/data/location/NextBattle.png" MouseDown="Start_Next_Fight_MouseDown">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
                         <Setter Property="Source" Value="/data/location/StartNextFight.png"/>
@@ -70,7 +75,7 @@
                 </Image.Effect>
             </Image>
 
-            <Image Grid.Row="7" x:Name="Exit_to_Menu" Source="/data/location/Exit_to_Menu.png" MouseDown="Exit_to_Menu_MouseDown">
+            <Image Grid.Row="7" x:Name="Exit_to_Menu" Source="/data/location/ExitMenu.png" MouseDown="Exit_to_Menu_MouseDown" Margin="-50">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
                         <Setter Property="Source" Value="/data/location/Exit_to_Menu.png"/>
@@ -99,7 +104,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Image Grid.Row="3" x:Name="Study_Abilities" Source="/data/location/StudyAbility.png" MouseDown="Study_Abilities_MouseDown">
+            <Image Grid.Row="3" x:Name="Study_Abilities" Source="/data/location/StudyAbility.png" MouseDown="Study_Abilities_MouseDown" Margin="0,40,0,-80">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
                         <Setter Property="Source" Value="/data/location/StudyAbility.png"/>
