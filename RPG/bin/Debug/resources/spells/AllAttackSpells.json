@@ -1,18 +1,18 @@
 [
   {
-    "Damage": 25,
+    "Damage": 5,
     "Name": "Fire Ball",
-    "ManaCost": 10,
+    "ManaCost": 12,
     "Level": 1
   },
   {
-    "Damage": 25,
+    "Damage": 5,
     "Name": "Frost Ball",
     "ManaCost": 8,
     "Level": 2
   },
   {
-    "Damage": 40,
+    "Damage": 8,
     "Name": "Lightning",
     "ManaCost": 16,
     "Level": 3

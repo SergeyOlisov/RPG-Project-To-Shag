@@ -142,7 +142,7 @@ namespace RPG
         public void UpdateHero()
         {
             MaxHealth = Vitality * 5;
-            MaxMana = Intellect * 5;
+            MaxMana = Intellect * 2;
             ExperienceToNextLevel = Level * 100;
             // TO-DO подумать над остальным
         }

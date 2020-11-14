@@ -12,21 +12,21 @@ namespace RPG
 {
     public partial class Location1 : Window
     {
-        Enemy enemy = new Enemy(Player.hero);
+        Enemy enemy = new Enemy(Player.Hero);
         public bool isSpellCast = false;
         private bool _isAttack = false;
         //private bool _isPotionUsed = false;
         public Location1()
         {
             InitializeComponent();
-            HP_Hero.Text = Player.hero.Health.ToString();
-            Mana_Hero.Text = Player.hero.Mana.ToString();
+            HP_Hero.Text = Player.Hero.Health.ToString();
+            Mana_Hero.Text = Player.Hero.Mana.ToString();
             HP_Enemy.Text = enemy.Health.ToString();
             Mana_Enemy.Text = enemy.Mana.ToString();
         }
         public void EndFight() 
         {
-            if (enemy.Health <= 0 || Player.hero.Health <=0)
+            if (enemy.Health <= 0 || Player.Hero.Health <=0)
             {
                 var Briefing = new Briefing();
                 Briefing.Show();
@@ -104,7 +104,7 @@ namespace RPG
             isSpellCast = false;
             _isAttack = false;
             Battle.EnemyAttack(ref enemy);
-            HP_Hero.Text = Player.hero.Health.ToString();
+            HP_Hero.Text = Player.Hero.Health.ToString();
             EndFight();
         }
     }

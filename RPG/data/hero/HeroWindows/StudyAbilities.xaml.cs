@@ -29,7 +29,7 @@ namespace RPG.data.hero.HeroWindows
             InitializeComponent();
             _briefing = briefing;
             DataContext = new ViewModelAbilities(_allAbilities);
-            text_skillPoints.Text = Player.hero.SkillPoints.ToString();
+            text_skillPoints.Text = Player.Hero.SkillPoints.ToString();
         }
 
         private void button_studyAbil_Click(object sender, RoutedEventArgs e)
@@ -40,14 +40,14 @@ namespace RPG.data.hero.HeroWindows
                 _chosenAbility.ManaCost = Convert.ToInt32(text_abilityMana.Text);
                 _chosenAbility.Level = Convert.ToInt32(text_abilityLevel.Text);
                 _chosenAbility.Damage = Convert.ToInt32(text_abilityDamage.Text);
-                if (Player.hero.SkillPoints == 0)
+                if (Player.Hero.SkillPoints == 0)
                 {
                     MessageBox.Show("Недостаточно очков учений");
                     return;
                 }
-                Player.hero.StudyAbility(_chosenAbility);
-                text_skillPoints.Text = Player.hero.SkillPoints.ToString();
-                if (Player.hero.Level < Convert.ToInt32(text_abilityLevel.Text))
+                Player.Hero.StudyAbility(_chosenAbility);
+                text_skillPoints.Text = Player.Hero.SkillPoints.ToString();
+                if (Player.Hero.Level < Convert.ToInt32(text_abilityLevel.Text))
                 {
                     MessageBox.Show("Недостаточно высокий уровень персонажа");
                 }
