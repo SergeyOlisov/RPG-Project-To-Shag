@@ -8,6 +8,9 @@
 
   <ItemGroup>
     <None Remove="Authors.jpg" />
+    <None Remove="data\hero\HeroWindows\Applace.png" />
+    <None Remove="data\hero\HeroWindows\Book.png" />
+    <None Remove="data\hero\HeroWindows\Close.png" />
     <None Remove="data\location\123.jpg" />
     <None Remove="data\location\Ability.png" />
     <None Remove="data\location\Attack.png" />
@@ -43,6 +46,9 @@
 
   <ItemGroup>
     <Resource Include="Authors.jpg" />
+    <Resource Include="data\hero\HeroWindows\Applace.png" />
+    <Resource Include="data\hero\HeroWindows\Book.png" />
+    <Resource Include="data\hero\HeroWindows\Close.png" />
     <Resource Include="data\location\Ability.png" />
     <Resource Include="data\location\Attack.png" />
     <Resource Include="data\location\EndTurn.png" />

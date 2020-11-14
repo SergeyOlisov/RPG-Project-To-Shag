@@ -31,7 +31,7 @@ namespace RPG
             DataContext = new ViewModelAbilities();
         }
 
-        private void button_applyAbility_Click(object sender, RoutedEventArgs e)
+        private void Applace_MouseDown(object sender, MouseButtonEventArgs e)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace RPG
             Close();
         }
 
-        private void button_closeAbility_Click(object sender, RoutedEventArgs e)
+        private void Close_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Close();
         }
