@@ -19,17 +19,6 @@ namespace RPG.data.location
             Enemy enemy1 = new Enemy();
         }
 
-<<<<<<< HEAD
-        public static void SpellCaste(ref Enemy enemy, ref Hero hero, Ability ability) 
-        {
-            if(hero.Mana <= ability.ManaCoast)
-            {
-                return;
-            }
-            hero.Mana -= ability.ManaCoast;
-
-            if (ability is AttackSpell attack)
-=======
         public static void HeroSpellCaste(ref Enemy enemy, Ability ability)
         {
             enemy.Health -= ability.AttackAbility(ability) * Player.Hero.Intellect * 30 / 100;
@@ -40,7 +29,6 @@ namespace RPG.data.location
         {
             var random = new Random();
             if (random.Next(0, 100) > Player.Hero.Dodge())
->>>>>>> remotes/origin/release-0.01
             {
                 Player.Hero.Health -= enemy.Damage();
                 IsHeroDead();

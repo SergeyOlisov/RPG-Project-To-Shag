@@ -62,12 +62,7 @@ namespace RPG
             openFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
-<<<<<<< HEAD
-                hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
-                Player.hero = hero;
-=======
                 Player.Hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
->>>>>>> remotes/origin/release-0.01
             }
             else
             {

@@ -9,14 +9,6 @@ namespace RPG
 {
     public class Ability : INotifyPropertyChanged
     {
-<<<<<<< HEAD
-        public string Name { set; get; }
-        public int ManaCoast { set; get; } //расход маны на абилку
-        public int Level { set; get; } //требуемый уровень
-<<<<<<< Updated upstream
-        public int Mana { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int Value { set; get; }
-=======
         public event PropertyChangedEventHandler PropertyChanged;
 
         private string _name;
@@ -60,7 +52,6 @@ namespace RPG
                 OnPropertyChanged("Damage");
             }
         }
->>>>>>> remotes/origin/release-0.01
 
         public Ability() { }
 
@@ -71,45 +62,6 @@ namespace RPG
             Level = level;
             Damage = damage;
         }
-<<<<<<< HEAD
-
-        public int AttackAbility(Ability ability)
-        {
-            {
-                if (Mana >= ability.ManaCoast)
-                {
-                    if (ability is AttackSpell spell)
-                    {
-                        Mana -= spell.ManaCoast;
-                        return spell.Value;
-                    }
-                }
-
-                return 0;
-            }
-        }
-
-        public int Buff(Ability ability)
-        {
-            if (Mana >= ability.ManaCoast)
-            {
-                if (ability is Buff spell)
-                {
-                    Mana -= spell.ManaCoast;
-                    return spell.Value;
-                }
-            }
-            return 0;
-        }
-    }
-
-    public class Buff : Ability
-    {
-    }
-
-    public class AttackSpell : Ability
-    {
-=======
 
         public int AttackAbility(Ability ability)
         {
@@ -125,7 +77,6 @@ namespace RPG
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
->>>>>>> remotes/origin/release-0.01
     }
 }
 

@@ -1,1 +1,1 @@
-{"Name":"Wanderer","Level":2,"Experience":0,"ExperienceToNextLevel":200,"SkillPoints":1,"StatPoints":5,"Health":44,"MaxHealth":75,"Mana":3,"MaxMana":30,"Strength":15,"Agility":15,"Intellect":15,"Vitality":15,"Ability":[{"Name":"Fire Ball","ManaCost":12,"Level":1,"Damage":5}]}5}]}
+{"Name":"Wanderer","Level":2,"Experience":0,"ExperienceToNextLevel":200,"SkillPoints":1,"StatPoints":10,"Health":22,"MaxHealth":75,"Mana":6,"MaxMana":30,"Strength":15,"Agility":15,"Intellect":15,"Vitality":15,"Ability":[{"Name":"Fire Ball","ManaCost":12,"Level":1,"Damage":5}]}}]}
