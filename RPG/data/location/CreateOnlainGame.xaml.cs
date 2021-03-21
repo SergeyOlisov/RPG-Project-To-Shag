@@ -1,5 +1,7 @@
-﻿using System;
+﻿using RPG.Server;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,12 +26,27 @@ namespace RPG.data.location
 
         private void Connect_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            //Client client = new Client();
+            //checkServer.Items.Add("Клиент создан");
+            //client.Mes = "Клиент создан"; //checkServer.Items[checkServer.Items.Count - 1].ToString();
+            //client.ClientServer();
+            //checkServer.Items.Add(client.Mes);
+            var OnlainBattleClient = new OnlainBattle();
+            OnlainBattleClient.Show();
+            Close();
 
         }
 
         private void StartServer_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            /*string path = Directory.GetCurrentDirectory();
+            path = path + @"\Server\ServerRPG.exe";
+            System.Diagnostics.Process p = new System.Diagnostics.Process();
+            p.StartInfo.FileName = path;
+            p.Start();*/
+            var OnlainBattleServer = new OnlineBattleServer();
+            OnlainBattleServer.Show();
+            Close();
         }
 
         private void Polygon_MouseDown(object sender, MouseButtonEventArgs e)

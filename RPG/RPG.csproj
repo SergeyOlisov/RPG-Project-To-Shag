@@ -44,7 +44,10 @@
     <None Remove="data\location\Mana Hero.png" />
     <None Remove="data\location\ManaPotion.png" />
     <None Remove="data\location\NextBattle.png" />
+    <None Remove="data\location\OnlainBattle.jpg" />
     <None Remove="data\location\OnlainGameBackground.jpg" />
+    <None Remove="data\location\player1.png" />
+    <None Remove="data\location\player2.png" />
     <None Remove="data\location\StartNextFight.jpg" />
     <None Remove="data\location\StartNextFight.png" />
     <None Remove="data\location\startServer.png" />
@@ -88,7 +91,10 @@
     <Resource Include="data\location\Mana Hero.png" />
     <Resource Include="data\location\ManaPotion.png" />
     <Resource Include="data\location\NextBattle.png" />
+    <Resource Include="data\location\OnlainBattle.jpg" />
     <Resource Include="data\location\OnlainGameBackground.jpg" />
+    <Resource Include="data\location\player1.png" />
+    <Resource Include="data\location\player2.png" />
     <Resource Include="data\location\StartNextFight.png" />
     <Resource Include="data\location\startServer.png" />
     <Resource Include="data\location\StudyAbility.png" />
