@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using RPG.data.hero;
 
 namespace RPG.data.location
 {
     public abstract class Battle
     {
-        static IAbility spell = Player.hero;
-        TaskCompletionSource<bool> End = new TaskCompletionSource<bool>();
-
-        public static void Attack(ref Enemy enemy)
+        public static void HeroAttack(ref Enemy enemy)
         {
-            enemy.Health -= Player.hero.Damage();
+            enemy.Health -= Player.Hero.Damage();
             IsEnemyDead(ref enemy);
 
             Hero hero = new Hero();
             Enemy enemy1 = new Enemy();
         }
 
+<<<<<<< HEAD
         public static void SpellCaste(ref Enemy enemy, ref Hero hero, Ability ability) 
         {
             if(hero.Mana <= ability.ManaCoast)
@@ -29,31 +29,45 @@ namespace RPG.data.location
             hero.Mana -= ability.ManaCoast;
 
             if (ability is AttackSpell attack)
+=======
+        public static void HeroSpellCaste(ref Enemy enemy, Ability ability)
+        {
+            enemy.Health -= ability.AttackAbility(ability) * Player.Hero.Intellect * 30 / 100;
+            IsEnemyDead(ref enemy);
+        }
+        
+        public static void EnemyAttack(ref Enemy enemy)
+        {
+            var random = new Random();
+            if (random.Next(0, 100) > Player.Hero.Dodge())
+>>>>>>> remotes/origin/release-0.01
             {
-                enemy.Health -= spell.AttackAbility(ability);
-                IsEnemyDead(ref enemy);
+                Player.Hero.Health -= enemy.Damage();
+                IsHeroDead();
             }
-            else 
+            else
             {
-                Player.hero.Health += spell.Buff(ability);
-                if (Player.hero.MaxHealth < Player.hero.Health) 
-                {
-                    Player.hero.Health = Player.hero.MaxHealth;
-                }
+                MessageBox.Show("Hero dodge, bitch!", "DODGE", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
 
-        public static void IsEnemyDead(ref Enemy enemy) 
+        private static void IsEnemyDead(ref Enemy enemy) 
         {
             if (enemy.Health <= 0)
             {
-                Player.hero.LevelUp(enemy.Dead());
+                MessageBox.Show("Враг повержен!", "ПОБЕДА", MessageBoxButton.OK, MessageBoxImage.Warning);
+                Player.Hero.LevelUp(enemy.Dead());
+                Player.ManaPotions += 2;
+                Player.HealthPotions += 2;
+                Player.QuickSave(Player.Hero);
             }
         }
-
-        public static void EndBattle() 
+        private static void IsHeroDead()
         {
-            Player.TempHeroSave(Player.hero);
+            if (Player.Hero.Health <= 0)
+            {
+                MessageBox.Show("Вы погибли!", "Поражение", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }

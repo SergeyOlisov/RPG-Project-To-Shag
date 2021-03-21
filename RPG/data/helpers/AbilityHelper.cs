@@ -8,22 +8,18 @@ namespace RPG.data.helpers
 {
     public static class AbilityHelper
     {
-        public static List<AttackSpell> GetAttackSpells()
+        public static List<Ability> GetAttackSpells()
         {
-            using (FileStream fs = new FileStream(@"D:\Курсяк\RPG-Project-To-Shag\RPG\resources\spells\AllAttackSpells.json", FileMode.Open))
+            using (FileStream fs = new FileStream(@"..\resources\spells\AllAttackSpells.json", FileMode.Open))
             {
-                var ability = JsonSerializer.DeserializeAsync<List<AttackSpell>>(fs).Result;
+                var ability = JsonSerializer.DeserializeAsync<List<Ability>>(fs).Result;
                 return ability;
             }
         }
 
-        public static List<Buff> GetBuffSpells()
+        public static Ability GetFirstAbility()
         {
-            using (FileStream fs = new FileStream(@"D:\Курсяк\RPG-Project-To-Shag\RPG\resources\spells\AllBuffSpells.json", FileMode.Open))
-            {
-                var ability = JsonSerializer.DeserializeAsync<List<Buff>>(fs).Result;
-                return ability;
-            }
+            return new Ability("Fire Ball", 12,1,5);
         }
     }
 }

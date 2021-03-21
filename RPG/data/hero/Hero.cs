@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using RPG.data.helpers;
 
 namespace RPG
 {
-    public class Hero : IAbility
+    public class Hero
     {
         public string Name { set; get; }
         
@@ -31,15 +32,16 @@ namespace RPG
         public Hero() 
         {
             Name = "Wanderer";
-            Level = 2; //нужен 1 лвл, 2 для теста
+            Level = 1; 
             Experience = 0;
             Strength = 15;
             Agility = 15;
             Intellect = 15;
             Vitality = 15;
-            StatPoints = 5; // для теста
-            SkillPoints = 1; // для теста
+            Ability.Add(AbilityHelper.GetFirstAbility());
             UpdateHero();
+            Mana = MaxMana;
+            Health = MaxHealth;
         }
         public Hero(string name)
         {
@@ -50,7 +52,10 @@ namespace RPG
             Agility = 15;
             Intellect = 15;
             Vitality = 15;
+            Ability.Add(AbilityHelper.GetFirstAbility());
             UpdateHero();
+            Mana = MaxMana;
+            Health = MaxHealth;
         }
 
         public void LevelUp(int experience)
@@ -61,17 +66,17 @@ namespace RPG
                 Experience = 0;
                 Level++;
                 SkillPoints += 1;
-                StatPoints += 5;
-                LevelUp(experience);
+                StatPoints += 10;
                 UpdateHero();
+                LevelUp(experience);
             }
-
+            
             Experience += experience;
         }
         
         public int Damage()
         {
-            return Strength * 5;
+            return Strength;
         }
 
         public void StrengthUp()
@@ -129,10 +134,15 @@ namespace RPG
             }
         }
 
+        public int Dodge()
+        {
+            return Agility / 5;
+        }
+
         public void UpdateHero()
         {
             MaxHealth = Vitality * 5;
-            MaxMana = Intellect * 5;
+            MaxMana = Intellect * 2;
             ExperienceToNextLevel = Level * 100;
             // TO-DO подумать над остальным
         }

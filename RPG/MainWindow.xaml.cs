@@ -1,26 +1,19 @@
 ﻿using System;
-using System.IO;
-using System.Text.Json.Serialization;
 using System.Windows;
-using System.Runtime.Serialization.Json;
-using System.Text.Json;
-using System.Threading.Tasks;
 using Microsoft.Win32;
-using RPG.data.helpers;
-using System.Windows.Documents;
-using System.Collections.Generic;
 using System.Windows.Input;
 using RPG.data.hero;
+using System.Windows.Media;
+using System.IO;
 
 namespace RPG
 {
 
     public partial class MainWindow : Window
     {
-        static Hero hero = new Hero();
         public MainWindow()
         {
-            Player.GetHero();
+            Editor.EnemySerialize(new Enemy());
             InitializeComponent();
         }
         private void Exit_x_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -54,6 +47,10 @@ namespace RPG
         }
         private void NewGames_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            if(Player.Hero == null)
+            {
+                Player.CreatePlayer();
+            }
             var Location1 = new Location1();
             Location1.Show();
             Close();
@@ -65,8 +62,12 @@ namespace RPG
             openFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
+<<<<<<< HEAD
                 hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
                 Player.hero = hero;
+=======
+                Player.Hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
+>>>>>>> remotes/origin/release-0.01
             }
             else
             {
@@ -76,11 +77,15 @@ namespace RPG
         }
         private void Setting_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            var Settings = new Settings();
+            Settings.Show();
+            Close();
         }
         private void Authors_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            var Authors = new Authors();
+            Authors.Show();
+            Close();
         }
     }
 }

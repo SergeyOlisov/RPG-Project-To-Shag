@@ -1,23 +1,22 @@
 ﻿using System;
-using System.IO;
-using System.Text.Json.Serialization;
 using System.Windows;
-using System.Runtime.Serialization.Json;
-using System.Text.Json;
-using System.Threading.Tasks;
 using Microsoft.Win32;
-using RPG.data.helpers;
-using System.ComponentModel;
+using System.Windows.Input;
 using RPG.data.hero;
+<<<<<<< HEAD
 using RPG.data.location;
+=======
+using System.Windows.Media;
+using System.IO;
+using RPG.data.location;
+using RPG.data.hero.HeroWindows;
+>>>>>>> remotes/origin/release-0.01
 
 namespace RPG
 {
-    /// <summary>
-    /// Логика взаимодействия для Location1.xaml
-    /// </summary>
     public partial class Location1 : Window
     {
+<<<<<<< HEAD
 
         IAbility attacSpell = Player.hero;
         TaskCompletionSource<bool> End = new TaskCompletionSource<bool>();
@@ -65,21 +64,27 @@ namespace RPG
 
 
 
+=======
+        Enemy enemy = new Enemy(Player.Hero);
+        public bool isSpellCast = false;
+        private bool _isAttack = false;
+        //private bool _isPotionUsed = false;
+>>>>>>> remotes/origin/release-0.01
         public Location1()
         {
             InitializeComponent();
-            EndBattle();
+            HP_Hero.Text = Player.Hero.Health.ToString();
+            Mana_Hero.Text = Player.Hero.Mana.ToString();
+            HP_Enemy.Text = enemy.Health.ToString();
+            Mana_Enemy.Text = enemy.Mana.ToString();
+            Count_Health_Potion.Text = Player.HealthPotions.ToString();
+            Count_Mana_Potion.Text = Player.ManaPotions.ToString();
         }
-
-        private void Attack_Click(object sender, RoutedEventArgs e)
+        public void EndFight() 
         {
-            ShowStatistics.Items.Add("");
-            enemy.Health -= Player.hero.Damage();
-            ShowStatistics.Items.Add("Hero deals damage: " + Player.hero.Damage());
-            ShowStatistics.Items.Add("Enemy Health: " + enemy.Health);
-            ShowStatistics.Items.Add("");
-            if (!CheckHP())
+            if (enemy.Health <= 0 || Player.Hero.Health <=0)
             {
+<<<<<<< HEAD
                 DamageEnemy();
             }
             if(enemy.Health <= 0)
@@ -87,79 +92,106 @@ namespace RPG
                 Battle.IsEnemyDead(ref enemy);
                 ShowStatistics.Items.Add(Player.hero.Experience);
                 Player.TempHeroSave(Player.hero);
+=======
+                var Briefing = new Briefing();
+                Briefing.Show();
+                Close();
+>>>>>>> remotes/origin/release-0.01
             }
         }
-
-        private void DamageEnemy()
-        {
-            Player.hero.Health -= enemy.Damage();
-            ShowStatistics.Items.Add("Enemy deals damage: " + enemy.Damage());
-            ShowStatistics.Items.Add("Health Hero: " + Player.hero.Health);
-            ShowStatistics.Items.Add("");
-            CheckHP();
-        }
-        private bool CheckHP()
-        {
-            if (Player.hero.Health <= 0 || enemy.Health <= 0)
-            {
-                End.SetResult(true);
-                return true;
-                //дополнить 
-                //закрытие окна или невозможность нажать на атаку
-            }
-            return false;
-        }
-        private async void EndBattle()
-        {
-            await End.Task;
-            ShowStatistics.Items.Add("Finish");
-        }
-
-        private void Exit_Click(object sender, RoutedEventArgs e)
+        private void Exit_x_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             Close();
         }
-        private void Save_Click(object sender, RoutedEventArgs e)
+        private void RollUp_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
-            if (saveFileDialog.ShowDialog() == true)
-                Editor.HeroSerialize(Player.hero, saveFileDialog.FileName);
+            WindowState = WindowState.Minimized;
         }
-        private void Loading_Click(object sender, RoutedEventArgs e)
+
+        private void Polygon_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Text files (*.json)|*.json|(*.txt)|*.txt|All files (*.*)|*.*";
-            if (openFileDialog.ShowDialog() == true)
+            if (e.ChangedButton == MouseButton.Left)
             {
-                ShowStatistics.Items.Add("File downloaded");
-                Player.hero = Editor.HeroDeserializeAsync(openFileDialog.FileName);
-            }
-            else
-            {
-                ShowStatistics.Items.Add("File not uploaded");
+                DragMove();
             }
         }
 
-
-        private void Ability_Click(object sender, RoutedEventArgs e)
+        private void Polygon_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                DragMove();
+            }
+        }
+
+        private void Polygon_MouseDown_2(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                DragMove();
+            }
+        }
+
+        private void Polygon_MouseDown_3(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                DragMove();
+            }
+        }
+
+        private void Ability_Hero_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (isSpellCast)
+            {
+                MessageBox.Show("Нельзя повторно применить заклинание", "Achtung!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            var ChoiceAbilities = new ChoiceAbilities(this, ref enemy);
+            ChoiceAbilities.Show();
+        }
+
+        private void Attack_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (_isAttack)
+            {
+                MessageBox.Show("Нельзя повторно атаковать", "Achtung!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            Battle.HeroAttack(ref enemy);
+            _isAttack = true;
+            EndFight();
+            HP_Enemy.Text = enemy.Health.ToString();
+            Mana_Enemy.Text = enemy.Mana.ToString();
+        }
+
+        private void EndTurn_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+<<<<<<< HEAD
             Player.hero.Mana -= 10;
             Player.hero.Ability.Find(abil => abil == attackSpell);
             enemy.Health -= attackSpell.AttackAbility(attackSpell);
             ShowStatistics.Items.Add("Mana " + Player.hero.Mana);
+=======
+            isSpellCast = false;
+            _isAttack = false;
+            Battle.EnemyAttack(ref enemy);
+            HP_Hero.Text = Player.Hero.Health.ToString();
+            EndFight();
+>>>>>>> remotes/origin/release-0.01
         }
-
-        private void StaticHero_Click(object sender, RoutedEventArgs e)
+       
+        private void UseHealthPotion_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            var WindowStaticHero = new WindowStaticHero();
-            WindowStaticHero.Show();
+            Player.UseHealthPotion();
+            Count_Health_Potion.Text = Player.HealthPotions.ToString();
+            HP_Hero.Text = Player.Hero.Health.ToString();
         }
-
-
-
-        private void Mana_Hero_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void UseManaPotion_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            Player.UseManaPotion();
+            Count_Mana_Potion.Text = Player.ManaPotions.ToString();
+            Mana_Hero.Text = Player.Hero.Mana.ToString();
         }
     }
 }

@@ -4,10 +4,9 @@ using System.Text;
 
 namespace RPG
 {
-    public class Enemy : IAbility
+    public class Enemy
     {
         public string Name { set; get; }
-        public int Number { set; get; }
 
         public int Level { set; get; }
         public int Experience { set; get; }
@@ -17,14 +16,22 @@ namespace RPG
 
         public List<Ability> Ability { set; get; } = new List<Ability>();
 
-        public Enemy() { }
-
-        public Enemy(string name, Hero hero) // для тестирования
+        public Enemy() 
         {
-            Name = name;
+            Level = 1;
+            Name = "Skelet";
+            Health = 150;
+            Mana = 20;
+            //Ability = abilities;
+            Experience = 100;
+        }
+
+        public Enemy(Hero hero) // для тестирования
+        {
+            Name = "Рабочее название";
             Level = hero.Level;
-            Experience = Level * 100;
-            Health = Level * 150;
+            Experience = Level * 75 + 25;
+            Health = Level * 125;
             Mana = Level * 10;
         }
 
@@ -35,12 +42,13 @@ namespace RPG
             Health = health;
             Mana = mana;
             Ability = abilities;
-            Experience = level * 20 * (Health / 20) * ((Mana * Ability.Count) / 20);
+            Experience = level * 20 * (Health / 20) * ((Mana) / 20);
         }
 
         public int Damage() //тестовый урон
         {
-            return Level * 8;
+            var random = new Random();
+            return Level * random.Next(8,15);
         }
 
         public int Dead()
@@ -59,7 +67,6 @@ namespace RPG
 
         public void UpdateEnemy()
         {
-            Number++;
             Level++;
             Health = Health * 2;
             Mana = Mana * 2;

@@ -5,26 +5,261 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RPG"
         mc:Ignorable="d"
-        Title="Location1" Height="600" Width="800">
+                Title="MainWindow" Height="600" Width="800" SizeToContent="Manual" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="/data/location/Location1.jpg"/>
+    </Window.Background>
     <Grid>
-        <Image Source="/data/location/Location1.jpg" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="970" Margin="0,0,0,0"/>
-        <Image Source="/data/location/Enemy1.png" HorizontalAlignment="Left" Height="279" Margin="166,188,0,0" VerticalAlignment="Top" Width="196"/>
-        <Image Source="/data/location/Hero.png"  HorizontalAlignment="Left" Height="329" Margin="314,232,0,0" VerticalAlignment="Top" Width="276"/>
-        <ListBox Name="ShowStatistics" Margin="0,16,0,465"/>
-        <Button x:Name="Attack" Content="Attack" HorizontalAlignment="Left" Margin="413,514,0,0" VerticalAlignment="Top" Height="40" Width="110" Click="Attack_Click"/>
-        <Button x:Name="StaticHero" Content="Static Hero" HorizontalAlignment="Left" Margin="433,166,0,0" VerticalAlignment="Top" Width="102" Click="StaticHero_Click"/>
-        <Button x:Name="StaticEnemy" Content="Static Enemy" HorizontalAlignment="Left" Margin="207,442,0,0" VerticalAlignment="Top" Width="102"/>
-        <Menu Height="16" VerticalAlignment="Top">
-            <MenuItem Header="File">
-                <Button x:Name="Save" Content="Save" Click="Save_Click" />
-                <Button x:Name="Loading" Content="Loading" Click="Loading_Click" />
-                <Button x:Name="Exit" Content="Exit" Click="Exit_Click" />
-            </MenuItem>
-        </Menu>
-        <Button x:Name="Ability" Content="Ability coast" HorizontalAlignment="Left" Margin="546,514,0,0" VerticalAlignment="Top" Height="40" Width="110" Click="Ability_Click" />
-        <ProgressBar x:Name="Mana_Hero" HorizontalAlignment="Left" Height="10" Margin="434,222,0,0" VerticalAlignment="Top" Width="100" Foreground="Blue" Maximum="100" Minimum="0" Value="{Binding mana}" ValueChanged="Mana_Hero_ValueChanged"/>
-        <ProgressBar x:Name="HP_Hero" HorizontalAlignment="Left" Height="10" Margin="434,200,0,0" VerticalAlignment="Top" Width="100" Maximum="100" Minimum="0" Value="100"/>
-        <ProgressBar x:Name="Mana_Enemy" HorizontalAlignment="Left" Height="10" Margin="214,188,0,0" VerticalAlignment="Top" Width="100" Maximum="100" Minimum="0" Value="100" Foreground="Blue"/>
-        <ProgressBar x:Name="HP_Enemy" HorizontalAlignment="Left" Height="10" Margin="213,166,0,0" VerticalAlignment="Top" Width="100" Maximum="100" Minimum="0" Value="100"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Polygon Fill="Black" Opacity="0.6"
+                 Points="0,0 0,30 270,30 270,0" MouseDown="Polygon_MouseDown_1" />
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="0">
+            <Polygon Fill="Black" Opacity="0.6"
+                 Points="0,0 0,30 270,30 270,0" MouseDown="Polygon_MouseDown_2" />
+        </Grid>
+        <Grid Grid.Column="2" Grid.Row="0">
+            <Polygon Fill="Black" Opacity="0.6"
+                 Points="0,0 0,30 270,30 270,0" MouseDown="Polygon_MouseDown_3" />
+        </Grid>
+        <Grid x:Name="ToolBar" Grid.Row="0" Grid.Column="3">
+            <Polygon Fill="Black" Opacity="0.6"
+                 Points="0,0 0,30 270,30 270,0" MouseDown="Polygon_MouseDown" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Image x:Name="RollUp" Height="20" Width="30" Margin="10,0"  MouseDown="RollUp_MouseDown" Source="/data/images/rollup.png" >
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/data/images/rollup.png"/>
+                            <Setter Property="Opacity" Value="0.5"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <Image.Effect>
+                        <BlurEffect Radius="2"/>
+                    </Image.Effect>
+                </Image>
+                <Image x:Name="Exit_x" Height="30" Width="30" Margin="10,0" Source="/data/images/Exit_x.png" MouseDown="Exit_x_MouseDown">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/data/images/Exit_x.png"/>
+                            <Setter Property="Opacity" Value="0.5"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <Image.Effect>
+                        <BlurEffect Radius="2"/>
+                    </Image.Effect>
+                </Image>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="120"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=" *"/>
+                        <ColumnDefinition Width=" *"/>
+                        <ColumnDefinition Width=" *"/>
+                        <ColumnDefinition Width=" *"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Image Source="/data/location/HP Hero.png" Margin="-100"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <TextBlock x:Name="HP_Enemy" Text="" Foreground="LawnGreen" FontSize="25" Margin="2,5,0,0" TextWrapping="Wrap" />
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Image Source="/data/location/Mana Hero.png" Margin="-70"/>
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <TextBlock x:Name="Mana_Enemy" Text="" Foreground="Aqua" FontSize="25" Margin="10,5,0,0"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Image Source="/data/location/Enemy1.png" Margin="20,0,-20,-40"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="2" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Image Source="/data/location/Hero.png" Margin="0,-60,-20,-140"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Image Source="/data/location/HP Hero.png" Margin="-100" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <TextBlock x:Name="HP_Hero" Text="" Foreground="LawnGreen" FontSize="25" Margin="2,5,0,0"/>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Image Source="/data/location/Mana Hero.png" Margin="-70"/>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <TextBlock x:Name="Mana_Hero" Text="" Foreground="Aqua" FontSize="25" Margin="10,5,0,0"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="3" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="180"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row ="1">
+                <Image x:Name="Ability_Hero" Source="/data/location/Ability.png" MouseDown="Ability_Hero_MouseDown" >
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/data/location/Ability.png"/>
+                            <Setter Property="Opacity" Value="0.6"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <Image.Effect>
+                        <BlurEffect Radius="2"/>
+                    </Image.Effect>
+                </Image>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Image x:Name="Attack" Source="/data/location/Attack.png" MouseDown="Attack_MouseDown" >
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/data/location/Attack.png"/>
+                            <Setter Property="Opacity" Value="0.6"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <Image.Effect>
+                        <BlurEffect Radius="2"/>
+                    </Image.Effect>
+                </Image>
+            </Grid>
+
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Image x:Name="UseHealthPotion" Source="/data/location/HealthPotion.png" MouseDown="UseHealthPotion_MouseDown">
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="/data/location/HealthPotion.png"/>
+                                <Setter Property="Opacity" Value="0.6"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Opacity" Value="1" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                        <Image.Effect>
+                            <BlurEffect Radius="1"/>
+                        </Image.Effect>
+                    </Image>
+                </Grid>
+                
+                <TextBlock Grid.Column="1" x:Name="Count_Health_Potion" Text="" Foreground="LawnGreen" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto"/>
+            </Grid>
+
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Image x:Name="UseManaPotion" Source="/data/location/ManaPotion.png" MouseDown="UseManaPotion_MouseDown">
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Setter Property="Source" Value="/data/location/ManaPotion.png"/>
+                                <Setter Property="Opacity" Value="0.6"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Opacity" Value="1" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                        <Image.Effect>
+                            <BlurEffect Radius="1"/>
+                        </Image.Effect>
+                    </Image>
+                </Grid>
+                <TextBlock Grid.Column="1" x:Name="Count_Mana_Potion" Text="" Foreground="Aqua" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto"/>
+            </Grid>
+
+            <Grid Grid.Row="9">
+                <Image x:Name="EndTurn" Source="/data/location/EndTurn.png" MouseDown="EndTurn_MouseDown">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/data/location/EndTurn.png"/>
+                            <Setter Property="Opacity" Value="0.6"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <Image.Effect>
+                        <BlurEffect Radius="2"/>
+                    </Image.Effect>
+                </Image>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
