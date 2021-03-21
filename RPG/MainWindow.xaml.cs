@@ -80,9 +80,9 @@ namespace RPG
         }
         private void Authors_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            //var Authors = new Authors();
-            //Authors.Show();
-            //Close();
+            var Authors = new Authors();
+            Authors.Show();
+            Close();
 
             //var location = AppDomain.CurrentDomain.BaseDirectory;
             //location = location + "ServerRPG.exe";
@@ -90,14 +90,14 @@ namespace RPG
             //var tempPath = assem.Location;
             //tempPath = tempPath.Replace("RPG.dll", "ServerRPG.exe");
             ////tempPath = tempPath.Replace(@"\", "\\");
-            string path = Directory.GetCurrentDirectory();
+            /*string path = Directory.GetCurrentDirectory();
             path = path + @"\Server\ServerRPG.exe";
             System.Diagnostics.Process p = new System.Diagnostics.Process();
             p.StartInfo.FileName = path;
             p.Start();
             var ServerCheckWindow = new ServerCheckWindow();
             ServerCheckWindow.Show();
-            Close();
+            Close();*/
         }
     }
 }
