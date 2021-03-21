@@ -1,13 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-<<<<<<< HEAD
-      "C:\\Users\\user\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\user\\.nuget\\packages"
-=======
       "C:\\Users\\mneme\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\mneme\\.nuget\\packages"
->>>>>>> remotes/origin/add_server
     ]
   }
 }
