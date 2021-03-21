@@ -5,6 +5,8 @@ using System.Windows.Input;
 using RPG.data.hero;
 using System.Windows.Media;
 using System.IO;
+using RPG.Server;
+using System.Reflection;
 
 namespace RPG
 {
@@ -78,8 +80,23 @@ namespace RPG
         }
         private void Authors_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            var Authors = new Authors();
-            Authors.Show();
+            //var Authors = new Authors();
+            //Authors.Show();
+            //Close();
+
+            //var location = AppDomain.CurrentDomain.BaseDirectory;
+            //location = location + "ServerRPG.exe";
+            //Assembly assem = typeof(MainWindow).Assembly;
+            //var tempPath = assem.Location;
+            //tempPath = tempPath.Replace("RPG.dll", "ServerRPG.exe");
+            ////tempPath = tempPath.Replace(@"\", "\\");
+            string path = Directory.GetCurrentDirectory();
+            path = path + @"\Server\ServerRPG.exe";
+            System.Diagnostics.Process p = new System.Diagnostics.Process();
+            p.StartInfo.FileName = path;
+            p.Start();
+            var ServerCheckWindow = new ServerCheckWindow();
+            ServerCheckWindow.Show();
             Close();
         }
     }
