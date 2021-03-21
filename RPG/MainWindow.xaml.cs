@@ -5,6 +5,7 @@ using System.Windows.Input;
 using RPG.data.hero;
 using System.Windows.Media;
 using System.IO;
+using RPG.data.location;
 
 namespace RPG
 {
@@ -80,6 +81,13 @@ namespace RPG
         {
             var Authors = new Authors();
             Authors.Show();
+            Close();
+        }
+
+        private void OnlainGame_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var CreateOnlainGame = new CreateOnlainGame();
+            CreateOnlainGame.Show();
             Close();
         }
     }
