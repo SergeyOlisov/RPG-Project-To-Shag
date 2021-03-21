@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800" SizeToContent="Manual" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Background>
-        <ImageBrush ImageSource="/data/images/Menu.jpg"/>
+        <ImageBrush ImageSource="/data/images/Menu.jpg" Stretch="UniformToFill"/>
     </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -24,6 +24,7 @@
             <RowDefinition Height="100"/>
             <RowDefinition Height="0"/>
             <RowDefinition Height="100"/>
+            
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid x:Name="ToolBar" Grid.Row="0" Grid.Column="2">
@@ -72,7 +73,7 @@
             <Polygon Fill="Black" Opacity="0.6"
                  Points="0,0, 0,30, 270,30, 270,0" MouseDown="Polygon_MouseDown_1"/>
         </Grid>
-        <Grid Grid.Column="1" Grid.Row="2">
+        <Grid Grid.Column="1" Grid.Row="1">
             <Image x:Name="NewGames" Source="/data/images/Newgames.png" MouseDown="NewGames_MouseDown">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
@@ -90,11 +91,29 @@
                 </Image.Effect>
             </Image>
         </Grid>
-        <Grid Grid.Column="1" Grid.Row="4">
+        <Grid Grid.Column="1" Grid.Row="2">
             <Image x:Name="Load" Source="/data/images/Load.png" MouseDown="Load_MouseDown">
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
                         <Setter Property="Source" Value="/data/images/Load.png"/>
+                        <Setter Property="Opacity" Value="0.6"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="1" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+                <Image.Effect>
+                    <BlurEffect Radius="2"/>
+                </Image.Effect>
+            </Image>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="4">
+            <Image x:Name="OnlainGame" Height="400" Width="400" Source="/Onlain game.png" Margin="-60,-30,0,0" MouseDown="OnlainGame_MouseDown">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="/Onlain game.png"/>
                         <Setter Property="Opacity" Value="0.6"/>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">

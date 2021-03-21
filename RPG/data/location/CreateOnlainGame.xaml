@@ -1,0 +1,114 @@
+﻿<Window x:Class="RPG.data.location.CreateOnlainGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RPG.data.location"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800" SizeToContent="Manual" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="/data/location/OnlainGameBackground.jpg" Opacity="1" Stretch="UniformToFill"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="100"/>
+
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="ToolBar" Grid.Row="0" Grid.Column="2">
+            <Polygon Fill="Black" Opacity="0.6"
+                 Points="0,0 0,30 270,30 270,0" MouseDown="Polygon_MouseDown"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Image x:Name="RollUp" Height="20" Width="30" Margin="10,0"  Source="/data/images/rollup.png" MouseDown="RollUp_MouseDown" >
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/data/images/rollup.png"/>
+                            <Setter Property="Opacity" Value="0.5"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <Image.Effect>
+                        <BlurEffect Radius="2"/>
+                    </Image.Effect>
+                </Image>
+                <Image x:Name="Exit_x" Height="30" Width="30" Margin="10,0" Source="/data/images/Exit_x.png" MouseDown="Exit_x_MouseDown">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Source" Value="/data/images/Exit_x.png"/>
+                            <Setter Property="Opacity" Value="0.5"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Opacity" Value="1" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                    <Image.Effect>
+                        <BlurEffect Radius="2"/>
+                    </Image.Effect>
+                </Image>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Polygon Fill="Black" Opacity="0.6"
+                 Points="0,0, 0,30, 270,30, 270,0" MouseDown="Polygon_MouseDown_1"/>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Polygon Fill="Black" Opacity="0.6"
+                 Points="0,0, 0,30, 270,30, 270,0" MouseDown="Polygon_MouseDown_2"/>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="4">
+            <Image x:Name="ConnectGame" Source="/data/location/Connect.png" Margin="-68,-29,-68,-13" MouseDown="ConnectGame_MouseDown">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="/data/location/Connect.png"/>
+                        <Setter Property="Opacity" Value="0.6"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="1" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+                <Image.Effect>
+                    <BlurEffect Radius="2"/>
+                </Image.Effect>
+            </Image>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="6">
+            <Image x:Name="CreateGame" Source="/data/location/startServer.png" Margin="-62,-13,-62,-13" MouseDown="CreateGame_MouseDown">
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="/data/location/startServer.png"/>
+                        <Setter Property="Opacity" Value="0.6"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="1" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+                <Image.Effect>
+                    <BlurEffect Radius="2"/>
+                </Image.Effect>
+            </Image>
+        </Grid>
+    </Grid>
+</Window>
