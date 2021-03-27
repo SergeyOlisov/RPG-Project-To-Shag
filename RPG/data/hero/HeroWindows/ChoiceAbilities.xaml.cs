@@ -21,12 +21,21 @@ namespace RPG
     public partial class ChoiceAbilities : Window
     {
         private readonly Location1 _location1;
+        private readonly OnlineBattleServer _onlineBattleServer;
         private Enemy _enemy;
         private Ability _chosenAbility = new Ability();
         public ChoiceAbilities(Location1 location1, ref Enemy enemy)
         {
             InitializeComponent();
             _location1 = location1;
+            _enemy = enemy;
+            DataContext = new ViewModelAbilities();
+        }
+
+        public ChoiceAbilities(OnlineBattleServer onlineBattleServer, ref Enemy enemy)
+        {
+            InitializeComponent();
+            _onlineBattleServer = onlineBattleServer;
             _enemy = enemy;
             DataContext = new ViewModelAbilities();
         }

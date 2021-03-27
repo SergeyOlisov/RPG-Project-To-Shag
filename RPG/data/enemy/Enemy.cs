@@ -44,6 +44,14 @@ namespace RPG
             Ability = abilities;
             Experience = level * 20 * (Health / 20) * ((Mana) / 20);
         }
+        public Enemy(string name, int level, int health, int mana) // для редактора
+        {
+            Level = level;
+            Name = name;
+            Health = health;
+            Mana = mana;
+            Experience = level * 20 * (Health / 20) * ((Mana) / 20);
+        }
 
         public int Damage() //тестовый урон
         {
@@ -72,6 +80,5 @@ namespace RPG
             Mana = Mana * 2;
             Experience = Level * 5;
         }
-
     }
 }

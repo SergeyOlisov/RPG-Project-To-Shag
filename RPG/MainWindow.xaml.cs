@@ -86,6 +86,7 @@ namespace RPG
 
         private void OnlainGame_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            Player.CreatePlayer();
             var CreateOnlainGame = new CreateOnlainGame();
             CreateOnlainGame.Show();
             Close();

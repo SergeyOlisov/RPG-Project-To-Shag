@@ -1,4 +1,5 @@
-﻿using RPG.Server;
+﻿using RPG.data.hero;
+using RPG.Server;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -44,6 +45,7 @@ namespace RPG.data.location
             System.Diagnostics.Process p = new System.Diagnostics.Process();
             p.StartInfo.FileName = path;
             p.Start();*/
+            //Player.CreatePlayer();
             var OnlainBattleServer = new OnlineBattleServer();
             OnlainBattleServer.Show();
             Close();

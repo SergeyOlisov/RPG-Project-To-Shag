@@ -78,13 +78,13 @@ Title="MainWindow" Height="600" Width="800" SizeToContent="Manual" WindowStyle="
                     <Image Source="/data/location/HP Hero.png" Margin="-100" />
                 </Grid>
                 <Grid x:Name="HP_Count" Grid.Row="2" Grid.Column="2">
-                    <TextBlock x:Name="HP_Hero_Client" Text="" Foreground="LawnGreen" FontSize="25" Margin="2,5,0,0"/>
+                    <TextBlock x:Name="HP_Hero_Client" Text="" Foreground="LawnGreen" FontSize="25" Margin="10,-3,0,0"/>
                 </Grid>
                 <Grid x:Name="MANA" Grid.Row="3" Grid.Column="1">
                     <Image Source="/data/location/Mana Hero.png" Margin="-75" />
                 </Grid>
                 <Grid x:Name="MANA_Count" Grid.Row="3" Grid.Column="2">
-                    <TextBlock x:Name="Mana_Hero_Client" Text="" Foreground="Aqua" FontSize="25" Margin="10,5,0,0"/>
+                    <TextBlock x:Name="Mana_Hero_Client" Text="" Foreground="Aqua" FontSize="25" Margin="10,0,0,0"/>
                 </Grid>
 
 
@@ -92,13 +92,13 @@ Title="MainWindow" Height="600" Width="800" SizeToContent="Manual" WindowStyle="
                     <Image Source="/data/location/HP Hero.png" Margin="-100" />
                 </Grid>
                 <Grid x:Name="HP_Count_Server" Grid.Row="2" Grid.Column="4">
-                    <TextBlock x:Name="HP_HeroServer" Text="" Foreground="LawnGreen" FontSize="25" Margin="2,5,0,0"/>
+                    <TextBlock x:Name="HP_Hero_Server" Text="" Foreground="LawnGreen" HorizontalAlignment="Right" FontSize="25" Margin="0,-3,10,0"/>
                 </Grid>
                 <Grid x:Name="MANA_Server" Grid.Row="3" Grid.Column="5">
                     <Image Source="/data/location/Mana Hero.png" Margin="-75" />
                 </Grid>
                 <Grid x:Name="MANA_Count_Server" Grid.Row="3" Grid.Column="4">
-                    <TextBlock x:Name="Mana_Hero_CServer" Text="" Foreground="Aqua" FontSize="25" Margin="10,5,0,0"/>
+                    <TextBlock x:Name="Mana_Hero_Server" Text="" Foreground="Aqua" HorizontalAlignment="Right" FontSize="25" Margin="0,0,10,0"/>
                 </Grid>
             </Grid>
             <Grid x:Name="Hero1" Grid.Row="1">
@@ -170,10 +170,10 @@ Title="MainWindow" Height="600" Width="800" SizeToContent="Manual" WindowStyle="
                     </Image>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="6">
-                    <TextBlock x:Name="HP_Hero_Client_Bottle" Text="" Foreground="LawnGreen" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto"/>
+                    <TextBlock x:Name="HP_Hero_Server_Bottle" Text="" Foreground="LawnGreen" FontSize="25" HorizontalAlignment="Right" VerticalAlignment="Center" Width="Auto"/>
                 </Grid>
                 <Grid Grid.Row="1" Grid.Column="6">
-                    <TextBlock x:Name="Mana_Hero" Text="" Foreground="Aqua" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto"/>
+                    <TextBlock x:Name="Mana_Hero_Server_Bottle" Text="" Foreground="Aqua" FontSize="25" HorizontalAlignment="Right" VerticalAlignment="Center" Width="Auto"/>
                 </Grid>
                 <Grid Grid.Row="0" Grid.Column="4">
                     <Image x:Name="Attack" Source="/data/location/Attack.png" MouseDown="Attack_MouseDown"  >
