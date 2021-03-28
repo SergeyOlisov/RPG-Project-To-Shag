@@ -10,6 +10,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Grpc.Net.Client;
+using GrpcGreeterClient;
+using System.Threading;
 
 namespace RPG.data.location
 {
@@ -18,23 +23,23 @@ namespace RPG.data.location
     /// </summary>
     public partial class OnlineBattleServer : Window
     {
+        GrpcClient grpcClient = new GrpcClient();
         public bool isSpellCast = false;
         private bool _isAttack = false;
         List<Ability> abilities;
         Hero player_Server = new Hero();
         Hero player_Client = new Hero();
-
-        //Enemy player_Server = new Enemy("123",1,100,50);
-        //Enemy player_Client = new Enemy("123", 1, 150, 25);
         public OnlineBattleServer()
         {
             InitializeComponent();
+            //Task.Factory.StartNew(new Action(client.Process));
             HP_Hero_Server.Text = player_Server.Health.ToString();
             Mana_Hero_Server.Text = player_Server.Mana.ToString();
             HP_Hero_Client.Text = player_Client.Health.ToString();
             Mana_Hero_Client.Text = player_Client.Mana.ToString();
             HP_Hero_Server_Bottle.Text = Player.HealthPotions.ToString();
             Mana_Hero_Server_Bottle.Text = Player.ManaPotions.ToString();
+
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
@@ -49,13 +54,24 @@ namespace RPG.data.location
 
         private void Attack_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            BattleServer.PlayerAttack(player_Client);
+            var damage = BattleServer.PlayerAttack(ref player_Client);
             HP_Hero_Client.Text = player_Client.Health.ToString();
             Mana_Hero_Client.Text = player_Client.Mana.ToString();
+            //var test = Test();
+            //test.Start();
+            Test();
+
         }
 
         private void Ability_Hero_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            //client.Process();
+            //Task.Factory.StartNew(new Action(client.Process));
+            //var temp = client.GetMessage();
+            // var temp1 = Convert.ToInt32(temp);
+            //BattleServer.PlayerAttack1(temp1 ,player_Client);
+            HP_Hero_Client.Text = player_Client.Health.ToString();
+            Mana_Hero_Client.Text = player_Client.Mana.ToString();
 
         }
 
@@ -81,6 +97,14 @@ namespace RPG.data.location
             {
                 DragMove();
             }
+        }
+        public void  Test()
+        {
+            using var channel = GrpcChannel.ForAddress("https://localhost:5001");
+            var client = new Greeter.GreeterClient(channel);
+            var reply =  client.SayHelloAsync(
+            new HelloRequest { Name = "Host" });
+            Thread.Sleep(500);
         }
     }
 }

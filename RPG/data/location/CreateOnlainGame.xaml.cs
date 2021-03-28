@@ -1,5 +1,4 @@
 ﻿using RPG.data.hero;
-using RPG.Server;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,11 +26,6 @@ namespace RPG.data.location
 
         private void Connect_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            //Client client = new Client();
-            //checkServer.Items.Add("Клиент создан");
-            //client.Mes = "Клиент создан"; //checkServer.Items[checkServer.Items.Count - 1].ToString();
-            //client.ClientServer();
-            //checkServer.Items.Add(client.Mes);
             var OnlainBattleClient = new OnlainBattle();
             OnlainBattleClient.Show();
             Close();
@@ -45,7 +39,6 @@ namespace RPG.data.location
             System.Diagnostics.Process p = new System.Diagnostics.Process();
             p.StartInfo.FileName = path;
             p.Start();*/
-            //Player.CreatePlayer();
             var OnlainBattleServer = new OnlineBattleServer();
             OnlainBattleServer.Show();
             Close();

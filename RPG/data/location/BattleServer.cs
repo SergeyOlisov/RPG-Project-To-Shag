@@ -7,9 +7,17 @@ namespace RPG.data.location
 {
     public class BattleServer
     {
-        public static void PlayerAttack(Hero hero)
+        public static int PlayerAttack(ref Hero hero)
         {
-            hero.Health -= Player.Hero.Damage();
+            var damage = Player.Hero.Damage();
+            hero.Health -= damage;
+            return damage;
+        }
+
+        public static int PlayerAttack1(int damage, Hero hero)
+        {
+            hero.Health -= damage;
+            return damage;
         }
     }
 }
