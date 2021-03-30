@@ -52,14 +52,14 @@ namespace RPG.data.location
 
         }
 
-        private void Attack_MouseDown(object sender, MouseButtonEventArgs e)
+        private async void Attack_MouseDown(object sender, MouseButtonEventArgs e)
         {
             var damage = BattleServer.PlayerAttack(ref player_Client);
             HP_Hero_Client.Text = player_Client.Health.ToString();
             Mana_Hero_Client.Text = player_Client.Mana.ToString();
             //var test = Test();
             //test.Start();
-            Test();
+            TestListBox.Items.Add(await Connect("Host"));
 
         }
 
@@ -98,13 +98,14 @@ namespace RPG.data.location
                 DragMove();
             }
         }
-        public void  Test()
+        public async Task<string> Connect(string name)
         {
             using var channel = GrpcChannel.ForAddress("https://localhost:5001");
             var client = new Greeter.GreeterClient(channel);
-            var reply =  client.SayHelloAsync(
-            new HelloRequest { Name = "Host" });
-            Thread.Sleep(500);
+            var reply = await client.SayHelloAsync(new HelloRequest { Name = name });
+            string Mes = reply.Message;
+            Thread.Sleep(2000);
+            return Mes;
         }
     }
 }

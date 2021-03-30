@@ -58,14 +58,14 @@ namespace RPG.data.location
             WindowState = WindowState.Minimized;
         }
 
-        private void Attack_MouseDown(object sender, MouseButtonEventArgs e)
+        private async void Attack_MouseDown(object sender, MouseButtonEventArgs e)
         {
             //BattleServer.PlayerAttack(ref player_Server);
             var temp = BattleServer.PlayerAttack(ref player_Server);
             HP_Hero_Server.Text = player_Server.Health.ToString();
             Mana_Hero_Server.Text = player_Server.Mana.ToString();
             //var qqq = Test("Client");
-            //TestListBox.Items.Add(Test(""));
+            TestListBox.Items.Add(await Connect("Client"));
         }
 
         private void Ability_Hero_MouseDown(object sender, MouseButtonEventArgs e)
