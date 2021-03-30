@@ -94,7 +94,6 @@ namespace RPG.data.location
             var client = new Greeter.GreeterClient(channel);
             var reply = await client.SayHelloAsync(new HelloRequest { Name = name });
             string Mes = reply.Message;
-            Thread.Sleep(2000);
             return Mes;
         }
     }
